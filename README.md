@@ -13,6 +13,11 @@ Backend:
 -nodemon
 -dotenv
 -mongoose
+-bodyparser
+-validator
+-bcrypt
+-jsonwebtoken
+-multer
 
 Frontend:
 
