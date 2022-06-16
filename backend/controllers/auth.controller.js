@@ -1,7 +1,7 @@
+//AUTH.CONTROLLER.JS
+
 const UserModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
-
-const maxAge = 3 * 24 * 60 * 60 * 1000;
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
