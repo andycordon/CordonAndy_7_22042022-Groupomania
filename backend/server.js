@@ -2,19 +2,28 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const userRoutes = require("./routes/user.routes");
 require("dotenv").config({ path: "./config/.env" });
 require("./config/dataBase");
-const userRoutes = require("./routes/user.routes");
+const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const app = express();
+
+//Parser
+app.use(bodyParser.json()); //lecture du body
+app.use(bodyParser.urlencoded({ extended: true })); //lecture URL
+app.use(cookieParser()); //lecture des cookies
+
+//Sécurisation de la connection avec jwt
+app.get("*", checkUser);
+app.get("/jwtid", requireAuth, (req, res) => {
+  res.status(200).send(res.locals.user._id);
+});
 
 // server
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`);
 });
-
-//bodyparser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
 app.use("/api/user", userRoutes);

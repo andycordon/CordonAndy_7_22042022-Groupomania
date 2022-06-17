@@ -18,8 +18,10 @@ Backend:
 -bcrypt
 -jsonwebtoken
 -multer
+-cookie-parser
 
 Frontend:
+-npx install react
 
 -
 -
