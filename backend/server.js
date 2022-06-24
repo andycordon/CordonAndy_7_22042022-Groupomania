@@ -8,7 +8,20 @@ const postRoutes = require("./routes/post.routes");
 require("dotenv").config({ path: "./config/.env" });
 require("./config/dataBase");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
+const cors = require("cors");
+
 const app = express();
+
+//Cors
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  allowedHeaders: ["sessionId", "Content-Type"],
+  exposedHeaders: ["sessionId"],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+};
+app.use(cors(corsOptions));
 
 //Parser
 app.use(bodyParser.json()); //lecture du body
