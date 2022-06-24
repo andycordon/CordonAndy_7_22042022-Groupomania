@@ -1,4 +1,4 @@
-//AUTH.MIDDLEWARE.JS
+//AUTH.MIDDLEWARE
 
 const jwt = require("jsonwebtoken");
 const UserModel = require("../models/user.model");
@@ -30,13 +30,13 @@ module.exports.requireAuth = (req, res, next) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {
         console.log(err);
-        res.send(200).json("Il n'y à pas de token de connexion...");
+        res.send(200).json("Il n'y a pas de token de connexion...");
       } else {
         console.log(decodedToken.id);
         next();
       }
     });
   } else {
-    console.log("Il n'y à pas de token de connexion...");
+    console.log("Il n'y a pas de token de connexion...");
   }
 };

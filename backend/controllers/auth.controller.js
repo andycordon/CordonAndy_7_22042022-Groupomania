@@ -1,16 +1,18 @@
-//AUTH.CONTROLLER.JS
+//AUTH.CONTROLLER
 
 const UserModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const { signUpErrors, signInErrors } = require("../utils/errors.utils");
 
-const tokenLimit = "12h";
+//création d'un token
+const tokenLimit = "12h"; //temps d'expiration d'un token
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
     expiresIn: tokenLimit,
   });
 };
 
+//inscription
 module.exports.signUp = async (req, res) => {
   console.log(req.body);
   const { prenom, nom, email, password } = req.body;
@@ -25,6 +27,7 @@ module.exports.signUp = async (req, res) => {
   }
 };
 
+//connexion
 module.exports.signIn = async (req, res) => {
   const { email, password } = req.body;
 
@@ -39,7 +42,8 @@ module.exports.signIn = async (req, res) => {
   }
 };
 
+//déconnexion
 module.exports.logout = (req, res) => {
-  res.cookie("jwt", "", { tokenLimit: 1 });
-  res.redirect("/");
+  res.cookie("jwt", "", { tokenLimit: 1 }); //pour supprimer le token à la déconnexion
+  res.redirect("/"); //retourner à la racine à la déconnexion
 };

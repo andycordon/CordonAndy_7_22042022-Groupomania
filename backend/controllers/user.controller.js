@@ -1,11 +1,11 @@
-//USER.CONTROLLER.JS
+//USER.CONTROLLER
 
 const UserModel = require("../models/user.model");
 const ObjectID = require("mongoose").Types.ObjectId;
 
-//Récupération de tout les Users
+//Récupération de tous les Users
 module.exports.getAllUsers = async (req, res) => {
-  const users = await UserModel.find().select("-password");
+  const users = await UserModel.find().select("-password"); //récupération de tous les Users sauf les passwords
   res.status(200).json(users);
 };
 
@@ -17,7 +17,7 @@ module.exports.userInfo = (req, res) => {
   UserModel.findById(req.params.id, (err, docs) => {
     if (!err) res.send(docs);
     else console.log("ID inconnue : " + err);
-  }).select("-password");
+  }).select("-password"); // récupération de User sauf password
 };
 
 //Mise à jour de User
@@ -51,7 +51,7 @@ module.exports.deleteUser = async (req, res) => {
 
   try {
     await UserModel.remove({ _id: req.params.id }).exec();
-    res.status(200).json({ message: "Suppression réussie. " });
+    res.status(200).json({ message: "Suppression réussie !" });
   } catch (err) {
     return res.status(500).json({ message: err });
   }

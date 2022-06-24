@@ -1,3 +1,5 @@
+//POST.CONTROLLER
+
 const postModel = require("../models/post.model");
 const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
@@ -22,13 +24,13 @@ module.exports.createPost = async (req, res) => {
   if (req.file !== null) {
     try {
       if (
-        req.file.detectedMimeType != "image/jpg" &&
+        req.file.detectedMimeType != "image/jpg" && //Type de fichier accéptés
         req.file.detectedMimeType != "image/png" &&
         req.file.detectedMimeType != "image/jpeg"
       )
         throw Error("invalid file");
 
-      if (req.file.size > 500000) throw Error("max size");
+      if (req.file.size > 500000) throw Error("max size"); //Poids maximum des fichiers
     } catch (err) {
       const errors = uploadErrors(err);
       return res.status(201).json({ errors });
@@ -38,7 +40,7 @@ module.exports.createPost = async (req, res) => {
     await pipeline(
       req.file.stream,
       fs.createWriteStream(
-        `${__dirname}/../../frontend/public/uploads/posts/${fileName}`
+        `${__dirname}/../../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
       )
     );
   }
@@ -46,7 +48,7 @@ module.exports.createPost = async (req, res) => {
   const newPost = new postModel({
     posterId: req.body.posterId,
     message: req.body.message,
-    picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    picture: req.file !== null ? "./uploads/posts/" + fileName : "", //remplacement de la finalité de nommage par .jpg
     likers: [],
     comments: [],
   });
@@ -62,7 +64,7 @@ module.exports.createPost = async (req, res) => {
 //Modification d'un Post déjà poster
 module.exports.updatePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnue : " + req.params.id);
 
   const updatedRecord = {
     message: req.body.message,
@@ -82,18 +84,18 @@ module.exports.updatePost = (req, res) => {
 //Suppression d'un Post en ligne
 module.exports.deletePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnu : " + req.params.id);
 
   PostModel.findByIdAndRemove(req.params.id, (err, docs) => {
     if (!err) res.send(docs);
-    else console.log("Delete error : " + err);
+    else console.log("Erreur lors de la suppression : " + err);
   });
 };
 
 //liker un post
 module.exports.likePost = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnu : " + req.params.id);
 
   try {
     await PostModel.findByIdAndUpdate(
@@ -123,7 +125,7 @@ module.exports.likePost = async (req, res) => {
 //unliker un post
 module.exports.unlikePost = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnu : " + req.params.id);
 
   try {
     await PostModel.findByIdAndUpdate(
@@ -153,7 +155,7 @@ module.exports.unlikePost = async (req, res) => {
 //commenter un post
 module.exports.commentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnue : " + req.params.id);
 
   try {
     return PostModel.findByIdAndUpdate(
@@ -178,9 +180,10 @@ module.exports.commentPost = (req, res) => {
   }
 };
 
+//modifier un commentaire
 module.exports.editCommentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnu : " + req.params.id);
 
   try {
     return PostModel.findById(req.params.id, (err, docs) => {
@@ -188,7 +191,7 @@ module.exports.editCommentPost = (req, res) => {
         comment._id.equals(req.body.commentId)
       );
 
-      if (!theComment) return res.status(404).send("Comment not found");
+      if (!theComment) return res.status(404).send("Commentaire non trouver");
       theComment.text = req.body.text;
 
       return docs.save((err) => {
@@ -201,9 +204,10 @@ module.exports.editCommentPost = (req, res) => {
   }
 };
 
+//supprimer le commentaire d'un post
 module.exports.deleteCommentPost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send("ID unknown : " + req.params.id);
+    return res.status(400).send("ID inconnu : " + req.params.id);
 
   try {
     return PostModel.findByIdAndUpdate(

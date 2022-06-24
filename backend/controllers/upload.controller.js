@@ -1,10 +1,12 @@
+//UPLOAD.CONTROLLER
+
 const UserModel = require("../models/user.model");
 const fs = require("fs");
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
 const { uploadErrors } = require("../utils/errors.utils");
 
-//Créer une photo de profil
+//Ajouter une image
 module.exports.uploadProfil = async (req, res) => {
   try {
     if (
@@ -30,7 +32,7 @@ module.exports.uploadProfil = async (req, res) => {
     )
   );
 
-  //modifier une photo de profil
+  //modifier une image par une autre
   try {
     await UserModel.findByIdAndUpdate(
       req.body.userId,

@@ -20,6 +20,7 @@ Backend:
 -multer
 -multer 2.0
 -cookie-parser
+-cors
 
 Frontend:
 -npx install react

@@ -1,7 +1,10 @@
+//USER.MODEL
+
 const mongoose = require("mongoose");
 const { isEmail } = require("validator");
 const bcrypt = require("bcrypt");
 
+//Schema pour User
 const userSchema = new mongoose.Schema(
   {
     prenom: {
@@ -29,7 +32,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      max: 1024,
+      max: 255,
       minlength: 6,
     },
     picture: {
@@ -38,24 +41,25 @@ const userSchema = new mongoose.Schema(
     },
     bio: {
       type: String,
-      max: 1024,
+      max: 255,
     },
     likes: {
       type: [String],
     },
   },
   {
-    timestamps: true,
+    timestamps: true, //indication de la temporalité des posts
   }
 );
 
-// play function before save into display: 'block',
+//Cryptage du mot de passe
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt();
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 
+//Verification du mot de passe crypter pour connexion
 userSchema.statics.login = async function (email, password) {
   const user = await this.findOne({ email });
   if (user) {
@@ -63,9 +67,9 @@ userSchema.statics.login = async function (email, password) {
     if (auth) {
       return user;
     }
-    throw Error("Le mot de passe est invalide");
+    throw Error("Le mot de passe est incorrect...");
   }
-  throw Error("L'email est invalide");
+  throw Error("L'email est incorrect...");
 };
 
 const UserModel = mongoose.model("user", userSchema);

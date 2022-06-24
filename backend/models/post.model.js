@@ -1,5 +1,8 @@
+//POST.MODEL
+
 const mongoose = require("mongoose");
 
+//Schema pour Post
 const PostSchema = new mongoose.Schema(
   {
     posterId: {
@@ -32,7 +35,7 @@ const PostSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, //indication de la temporalité des posts
   }
 );
 

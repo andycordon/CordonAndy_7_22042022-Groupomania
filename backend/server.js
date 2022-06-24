@@ -1,4 +1,4 @@
-//SERVER.JS
+//SERVER
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -12,13 +12,13 @@ const cors = require("cors");
 
 const app = express();
 
-//Cors
+//gestion des cors
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL, //variable d'envronnement frontend
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", //pour acceptation de toutes les requettes
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
@@ -34,11 +34,11 @@ app.get("/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });
 
-//routes
-app.use("/api/user", userRoutes);
-app.use("/api/post", postRoutes);
+//routes principales
+app.use("/api/user", userRoutes); //route pour les Users
+app.use("/api/post", postRoutes); //route pour les Posts
 
-// server
+//connection au server
 app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
+  console.log(`Vous êtes bien sur le port ${process.env.PORT} !`); //variable d'environement backend
 });
