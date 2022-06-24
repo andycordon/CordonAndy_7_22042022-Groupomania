@@ -1,11 +1,11 @@
 const postModel = require("../models/post.model");
 const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
-// const { uploadErrors } = require("../utils/errors.utils");
+const { uploadErrors } = require("../utils/errors.utils");
 const ObjectID = require("mongoose").Types.ObjectId;
-// const fs = require("fs");
-// const { promisify } = require("util");
-// const pipeline = promisify(require("stream").pipeline);
+const fs = require("fs");
+const { promisify } = require("util");
+const pipeline = promisify(require("stream").pipeline);
 
 //Recuperation de tous les Posts
 module.exports.readPost = (req, res) => {
@@ -38,7 +38,7 @@ module.exports.createPost = async (req, res) => {
     await pipeline(
       req.file.stream,
       fs.createWriteStream(
-        `${__dirname}/../client/public/uploads/posts/${fileName}`
+        `${__dirname}/../../frontend/public/uploads/posts/${fileName}`
       )
     );
   }
@@ -46,7 +46,7 @@ module.exports.createPost = async (req, res) => {
   const newPost = new postModel({
     posterId: req.body.posterId,
     message: req.body.message,
-    // picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    picture: req.file !== null ? "./uploads/posts/" + fileName : "",
     likers: [],
     comments: [],
   });

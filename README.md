@@ -18,6 +18,7 @@ Backend:
 -bcrypt
 -jsonwebtoken
 -multer
+-multer 2.0
 -cookie-parser
 
 Frontend:

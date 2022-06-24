@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const postController = require("../controllers/post.controller");
-//const multer = require("multer");
-//const upload = multer();
+const multer = require("multer");
+const upload = multer();
 
 router.get("/", postController.readPost); //recupérer tout les posts
-router.post("/", postController.createPost); //créer un post
+router.post("/", upload.single("file"), postController.createPost); //créer un post text+image
 router.put("/:id", postController.updatePost); //modifier un post
 router.delete("/:id", postController.deletePost); //supprimer un post
 router.patch("/like-post/:id", postController.likePost); //like un post
