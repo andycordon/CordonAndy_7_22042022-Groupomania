@@ -24,6 +24,6 @@ Backend:
 
 Frontend:
 -npx install react
+-node-sass
 
--
 -
