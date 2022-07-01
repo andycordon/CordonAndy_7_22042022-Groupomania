@@ -26,3 +26,5 @@ Frontend:
 -npx install react
 -node-sass
 -react-router-dom
+-dotenv
+-axios
