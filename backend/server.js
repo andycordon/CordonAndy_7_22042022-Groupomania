@@ -14,7 +14,7 @@ const app = express();
 
 //gestion des cors
 const corsOptions = {
-  origin: "*", //variable d'envronnement frontend
+  origin: process.env.FRONTEND_URL, //variable d'envronnement frontend
   withCredentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
