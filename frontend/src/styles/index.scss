@@ -1,1 +1,70 @@
-//Feuille de style
+//Feuille de style pour tout les imports, mis à la racine index.js
+
+//Pour le moment style des pages connexion mis ici, prévoir l'arborescence futur
+* {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    font-family: arial;
+}
+
+.logo {
+    width:88%;
+    border-radius: 10px;
+}
+
+form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    }
+
+    input {
+        border-radius: 10px;
+        height: 28px;
+        margin: 8px 10px;
+        text-align: left;
+        text-indent: 10px;
+        border: #fff solid 1px;
+        
+        &:focus{
+            border: #FD2D01 solid 1px;
+            outline: none;
+        }
+    }
+
+    .button {
+        background: #FD2D01;
+        color: black;
+        margin: 0px 0 20px 0;
+        border-radius: 10px;
+        border: #FFD7D7 solid 1px;
+        height: 40px;
+        font-weight: 600;
+        box-shadow: 1px 1px 3px #FFD7D7;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+    
+        &:hover{
+            outline: none;
+            border: #FD2D01 solid 1px;
+            background-color: #FFD7D7;
+            box-shadow: none;
+        }
+    }
+
+    .link {
+        color: #FFD7D7;
+        display: block;
+        margin: 0 0 10px 0;
+                
+        &:visited {
+            color: #FFD7D7;
+        }
+    
+        &:hover {
+            color: #FD2D01;
+        }
+    }
