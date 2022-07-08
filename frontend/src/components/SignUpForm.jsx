@@ -12,7 +12,6 @@ const SignUpForm = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const terms = document.getElementById("terms");
     const firstNameError = document.querySelector(".firstName.error");
     const lastNameError = document.querySelector(".lastName.error");
     const emailError = document.querySelector(".email.error");
@@ -23,14 +22,14 @@ const SignUpForm = () => {
 
     passwordConfirmError.innerHTML = "";
 
-    if (password !== controlPassword || !terms.checked) {
+    if (password !== controlPassword) {
       if (password !== controlPassword)
         passwordConfirmError.innerHTML =
           "Les mots de passe ne sont pas identiques";
-
+    } else {
       await axios({
         method: "post",
-        url: `${process.env.REACT_APP_API_URL}api/user/`,
+        url: `${process.env.REACT_APP_API_URL}api/user/register`,
         data: {
           firstName,
           lastName,
@@ -92,7 +91,7 @@ const SignUpForm = () => {
           <label htmlFor="email"></label>
 
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             placeholder="E-mail"
@@ -125,7 +124,7 @@ const SignUpForm = () => {
             value={controlPassword}
           />
           <div className="password-confirm error"></div>
-          <input className="button" type="submit" value="VALIDER" />
+          <input className="button" type="submit" value="INSCRIPTION" />
         </form>
       )}
     </>

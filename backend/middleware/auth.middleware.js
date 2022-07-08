@@ -30,13 +30,13 @@ module.exports.requireAuth = (req, res, next) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {
         console.log(err);
-        res.send(200).json("Il n'y a pas de token de connexion...");
+        res.send(200).json("200 Il n'y a pas de token de connexion...");
       } else {
-        console.log(decodedToken.id);
+        console.log(decodedToken.id + "token reponse");
         next();
       }
     });
   } else {
-    console.log("Il n'y a pas de token de connexion...");
+    console.log("Else Il n'y a pas de token de connexion...");
   }
 };
