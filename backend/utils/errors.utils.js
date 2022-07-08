@@ -2,8 +2,12 @@
 
 //erreurs sur l'inscription
 module.exports.signUpErrors = (err) => {
-  let errors = { email: "", password: "" };
+  let errors = { firstName: "", lastName: "", email: "", password: "" };
 
+  if (err.message.includes("firstName"))
+    errors.firstName = "Le prénom est incorrect...";
+  if (err.message.includes("lastName"))
+    errors.firstName = "Le nom est incorrect...";
   if (err.message.includes("email")) errors.email = "L'email est incorrect...";
 
   if (err.message.includes("password"))

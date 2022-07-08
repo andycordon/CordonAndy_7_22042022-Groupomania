@@ -1,7 +1,19 @@
-import React from 'react'
-
-export default function Register() {
+import React from "react";
+import Regist from "../components/Regist";
+import "../styles/index.scss";
+export default function Login() {
   return (
-    <div>Enregistre toi pour accéder à Groupomania</div>
-  )
+    <div className="login-page">
+      <div className="log-container">
+        <div className="img-container">
+          <img
+            className="logo"
+            src="./img/log.png"
+            alt="Logo de l'entreprise avec son nom Groupomania"
+          />
+        </div>
+        <Regist />
+      </div>
+    </div>
+  );
 }
