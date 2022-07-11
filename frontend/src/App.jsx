@@ -19,7 +19,7 @@ const App = () => {
         .then((res) => {
           setUid(res.data);
         })
-        .catch((err) => console.log("No token"));
+        .catch((err) => console.log("Il n'y à pas de token"));
     };
     fetchToken();
 

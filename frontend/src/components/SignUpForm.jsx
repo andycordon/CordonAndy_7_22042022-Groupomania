@@ -57,10 +57,7 @@ const SignUpForm = () => {
       {formSubmit ? (
         <>
           <SignInForm />
-          <span></span>
-          <h4 className="success">
-            Enregistrement réussi, veuillez-vous connecter
-          </h4>
+          <p className="success">Enregistrement validé, connectez-vous !</p>
         </>
       ) : (
         <form action="" onSubmit={handleRegister} id="sign-up-form">
