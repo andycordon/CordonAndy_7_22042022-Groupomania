@@ -34,3 +34,5 @@ Frontend:
 -redux-thunk
 -redux-logger
 -redux-devtools-extension
+-reduxjs/toolkit
+-reducers
