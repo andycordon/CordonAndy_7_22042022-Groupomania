@@ -13,8 +13,8 @@ module.exports.checkUser = (req, res, next) => {
         next();
       } else {
         let user = await UserModel.findById(decodedToken.id);
-        res.locals.user = user; //LE LOG NAPARAIT PAS DANS LA CONSOLE
-        next(); //CE NEXT NE SE LANCE PAS, POURQUOI?
+        res.locals.user = user;
+        next();
       }
     });
   } else {
@@ -26,6 +26,7 @@ module.exports.checkUser = (req, res, next) => {
 //Controle du token avec la base de donnée
 module.exports.requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
+  console.log("coucou" + token);
   if (token) {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {

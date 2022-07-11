@@ -46,6 +46,7 @@ form {
         margin: 10px;
         display: flex;
         justify-content: center;
+        text-align: center;
     
         &:hover{
             outline: none;
@@ -68,3 +69,18 @@ form {
             color: #FD2D01;
         }
     }
+
+.logo-navbar{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+
+.logout {
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #fff;
+    width:10%;
+}

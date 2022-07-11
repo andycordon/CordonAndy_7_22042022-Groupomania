@@ -28,3 +28,9 @@ Frontend:
 -react-router-dom
 -dotenv
 -axios
+-js-cookie
+-react-redux
+-redux
+-redux-thunk
+-redux-logger
+-redux-devtools-extension
