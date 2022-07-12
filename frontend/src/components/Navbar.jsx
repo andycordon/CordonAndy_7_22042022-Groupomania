@@ -1,11 +1,11 @@
 import React from "react";
-// import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Logout from "./Logout";
 
 export default function Navbar() {
-  //   const uid = useContext(UidContext);
-  //   const userData = useSelector((state) => state.userReducer);
+  // const uid = useContext(UidContext);
+  //const userData = useSelector((state) => state.userReducer);
 
   return (
     <nav>
@@ -21,14 +21,13 @@ export default function Navbar() {
               <h3>Groupomania</h3>
             </div>
           </NavLink>
-          {/* <h5>Bienvenue {userData.pseudo}</h5> */}
         </div>
 
         <ul>
-          <li>Champs vide nav bar</li>
+          <li>Mon Profil</li>
           <li className="welcome">
             <NavLink exact to="/profil">
-              <h5>Bienvenue NOM VARIABLE</h5>
+              <h5>Bienvenue userData.firstName</h5>
             </NavLink>
           </li>
           <Logout />
