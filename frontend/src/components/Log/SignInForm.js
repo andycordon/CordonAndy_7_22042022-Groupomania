@@ -6,14 +6,13 @@ const SignInForm = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //pour ne pas recharger la page
     const emailError = document.querySelector(".email.error");
     const passwordError = document.querySelector(".password.error");
 
     axios({
-      method: "post",
+      method: "POST",
       url: `${process.env.REACT_APP_API_URL}api/user/login`,
-      withCredentials: true,
       data: {
         email,
         password,
@@ -35,29 +34,30 @@ const SignInForm = () => {
 
   return (
     <form action="" onSubmit={handleLogin} id="sign-up-form">
-      <label htmlFor="email">Email</label>
-      <br />
+      <label htmlFor="email"></label>
+
       <input
         type="text"
         name="email"
         id="email"
+        placeholder="E-mail"
+        title="Veuillez entrer votre adresse mail"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
       <div className="email error"></div>
-      <br />
-      <label htmlFor="password">Mot de passe</label>
-      <br />
+      <label htmlFor="password"></label>
       <input
         type="password"
         name="password"
         id="password"
+        placeholder="Mot de passe"
+        title="Veuillez entrer votre mot de passe"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
       <div className="password error"></div>
-      <br />
-      <input type="submit" value="Se connecter" />
+      <input type="submit" value="CONNEXION" />
     </form>
   );
 };

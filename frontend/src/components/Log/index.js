@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
-const Log = ( props ) => {
+const Log = (props) => {
   const [signUpModal, setSignUpModal] = useState(props.signup);
   const [signInModal, setSignInModal] = useState(props.signin);
 
@@ -25,14 +25,14 @@ const Log = ( props ) => {
             id="register"
             className={signUpModal ? "active-btn" : null}
           >
-            S'inscrire
+            Pas encore inscrit ?
           </li>
           <li
             onClick={handleModals}
             id="login"
             className={signInModal ? "active-btn" : null}
           >
-            Se connecter
+            Déjà inscrit ?
           </li>
         </ul>
         {signUpModal && <SignUpForm />}

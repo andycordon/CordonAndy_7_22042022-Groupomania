@@ -14,8 +14,8 @@ const Navbar = () => {
         <div className="logo">
           <NavLink exact to="/">
             <div className="logo">
-              <img src="./img/icon.png" alt="icon" />
-              <h3>Raccoont</h3>
+              <img src="./img/icon-home.png" alt="icon" />
+              <h3>Groupomania</h3>
             </div>
           </NavLink>
         </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
             <li></li>
             <li>
               <NavLink exact to="/profil">
-                <img src="./img/icons/login.svg" alt="login"/>
+                <img src="./img/icons/login.svg" alt="login" />
               </NavLink>
             </li>
           </ul>
