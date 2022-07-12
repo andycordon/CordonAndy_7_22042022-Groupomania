@@ -1,9 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import Home from '../../pages/Home';
-import Profil from '../../pages/Profil';
-import Trending from '../../pages/Trending';
-import Navbar from '../Navbar';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+import Home from "../../pages/Home";
+import Profil from "../../pages/Profil";
+import Trending from "../../pages/Trending";
+import Navbar from "../Navbar";
 
 const index = () => {
   return (
