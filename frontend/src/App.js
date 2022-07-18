@@ -10,7 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios("http://localhost:5000/jwtid", { withCredentials: true })
+    axios(`${process.env.REACT_APP_API_URL}jwtid`, { withCredentials: true })
       .then((res) => setUid(res.data))
       .catch((err) => console.log(err));
 
