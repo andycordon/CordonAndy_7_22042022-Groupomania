@@ -112,7 +112,7 @@ module.exports.likePost = async (req, res) => {
       .then((data) => res.send(data))
       .catch((err) => res.status(500).send({ message: err }));
   } catch (err) {
-    return res.status(400).send(err);
+    return res.status(400).json;
   }
 };
 
@@ -141,7 +141,7 @@ module.exports.unlikePost = async (req, res) => {
       .then((data) => res.send(data))
       .catch((err) => res.status(500).send({ message: err }));
   } catch (err) {
-    return res.status(400).send(err);
+    return res.status(400).json;
   }
 };
 
@@ -213,6 +213,6 @@ module.exports.deleteCommentPost = (req, res) => {
       .then((data) => res.send(data))
       .catch((err) => res.status(500).send({ message: err }));
   } catch (err) {
-    return res.status(400).send(err);
+    return res.status(400).json;
   }
 };
