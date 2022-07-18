@@ -12,8 +12,6 @@ import { getUsers } from "./actions/users.actions";
 import { getPosts } from "./actions/post.actions";
 
 const store = configureStore({ reducer: rootReducer });
-// rootReducer,
-// composeWithDevTools(applyMiddleware(thunk))
 
 store.dispatch(getUsers());
 store.dispatch(getPosts());
