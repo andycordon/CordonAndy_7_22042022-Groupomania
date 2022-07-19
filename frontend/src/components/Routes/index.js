@@ -7,7 +7,6 @@ import Navbar from "../Navbar";
 const index = () => {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Profil />} />
         <Route path="/home" element={<Home />} />

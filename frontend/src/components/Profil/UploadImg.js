@@ -19,7 +19,7 @@ const UploadImg = () => {
 
   return (
     <form action="" onSubmit={handlePicture} className="upload-pic">
-      <label htmlFor="file">Changer d'image</label>
+      <label htmlFor="file">Changer de photo</label>
       <input
         type="file"
         id="file"
@@ -27,8 +27,8 @@ const UploadImg = () => {
         accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <br/>
-      <input type="submit" value="Envoyer" />
+      <br />
+      <input type="submit" value="Confirmer" />
     </form>
   );
 };

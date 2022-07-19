@@ -70,7 +70,7 @@ const CardComments = ({ post }) => {
             placeholder="Laisser un commentaire"
           />
           <br />
-          <input type="submit" value="Envoyer" />
+          <input type="submit" value="Confirmer" />
         </form>
       )}
     </div>
