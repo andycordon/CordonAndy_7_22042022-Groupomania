@@ -70,18 +70,6 @@ const NewPostForm = () => {
         <i className="fas fa-spinner fa-pulse"></i>
       ) : (
         <>
-          <div className="data">
-            <p>
-              <span>{userData.following ? userData.following.length : 0}</span>{" "}
-              Abonnement
-              {userData.following && userData.following.length > 1 ? "s" : null}
-            </p>
-            <p>
-              <span>{userData.followers ? userData.followers.length : 0}</span>{" "}
-              Abonné
-              {userData.followers && userData.followers.length > 1 ? "s" : null}
-            </p>
-          </div>
           <NavLink to="/profil">
             <div className="user-info">
               <img src={userData.picture} alt="user-img" />
@@ -91,7 +79,7 @@ const NewPostForm = () => {
             <textarea
               name="message"
               id="message"
-              placeholder="Quoi de neuf ?"
+              placeholder="Que veux-tu poster ?"
               onChange={(e) => setMessage(e.target.value)}
               value={message}
             />
@@ -146,11 +134,11 @@ const NewPostForm = () => {
               <div className="btn-send">
                 {message || postPicture || video.length > 20 ? (
                   <button className="cancel" onClick={cancelPost}>
-                    Annuler message
+                    Annuler
                   </button>
                 ) : null}
                 <button className="send" onClick={handlePost}>
-                  Envoyer
+                  Poster
                 </button>
               </div>
             </div>

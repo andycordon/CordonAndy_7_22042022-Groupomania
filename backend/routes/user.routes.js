@@ -17,8 +17,6 @@ router.get("/", userController.getAllUsers); //récupération de tous les Users
 router.get("/:id", userController.userInfo); //récupération des infos User
 router.put("/:id", userController.updateUser); //mise à jour de User
 router.delete("/:id", userController.deleteUser); //suppression d'un User
-router.patch("/follow/:id", userController.follow);
-router.patch("/unfollow/:id", userController.unfollow);
 
 //route pour upload
 router.post("/upload", upload.single("file"), uploadController.uploadProfil); //ajouter une image

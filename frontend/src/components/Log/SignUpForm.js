@@ -100,7 +100,7 @@ const SignUpForm = () => {
           <div className="password error"></div>
           <br />
           <label htmlFor="password-conf">Confirmer mot de passe</label>
-          <br/>
+          <br />
           <input
             type="password"
             name="password"
@@ -119,7 +119,7 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
           <br />
-          <input type="submit" value="Valider inscription" />
+          <input type="submit" value="INSCRIPTION" />
         </form>
       )}
     </>

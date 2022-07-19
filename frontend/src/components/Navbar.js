@@ -15,7 +15,7 @@ const Navbar = () => {
           <NavLink to="/">
             <div className="logo">
               <img src="./img/icon.png" alt="icon" />
-              <h3>Raccoont</h3>
+              <h3>Groupomania</h3>
             </div>
           </NavLink>
         </div>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <li></li>
             <li className="welcome">
               <NavLink to="/profil">
-                <h5>Bienvenue {userData.pseudo}</h5>
+                <h5>Bonjour {userData.pseudo}</h5>
               </NavLink>
             </li>
             <Logout />
