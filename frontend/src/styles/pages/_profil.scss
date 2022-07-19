@@ -108,17 +108,15 @@
     height: 100%;
 
     img {
-      height: 280px;
+      width: 100%;
 
       @media screen and(max-width: 1050px) {
-        height: 220px;
+        width: 100%;
       }
       @media screen and(max-width: 950px) {
-        height: 200px;
+        width: 100%;
       }
-      @media screen and(max-width: 885px) {
-        display: none;
-      }
+      
     }
   }
   .update-container {
@@ -320,6 +318,20 @@
           h4 {
             text-align: left;
             min-width: 210px;
+          }
+          .follow-handler {
+            text-align: left;
+
+            button {
+              background: $color-4;
+              border-radius: 20px;
+              margin-right: 6px;
+
+              &:hover {
+                color: $color-3;
+                transform: translateX(2px);
+              }
+            }
           }
         }
       }
