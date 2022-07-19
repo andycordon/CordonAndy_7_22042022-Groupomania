@@ -1,40 +1,43 @@
+//SERVER
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
 require("dotenv").config({ path: "./config/.env" });
-require("./config/db");
+require("./config/dataBase");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
-
 const app = express();
 
+//gestion des cors
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: process.env.FRONTEND_URL, //variable d'envronnement frontend
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", //pour acceptation de toutes les requettes
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+//Parser
+app.use(bodyParser.json()); //lecture du body
+app.use(bodyParser.urlencoded({ extended: true })); //lecture URL
+app.use(cookieParser()); //lecture des cookies
 
-// jwt
+//Sécurisation de la connection avec jwt
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });
 
-// routes
+//routes principales
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
 
-// server
+//connection au server
 app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
+  console.log(`Listening on port ${process.env.PORT}`); //variable d'environement backend
 });
