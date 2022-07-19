@@ -249,12 +249,6 @@
     position: fixed;
     animation: popup 1s forwards;
 
-    @keyframes popup {
-      to {
-        backdrop-filter: blur(2px);
-      }
-    }
-
     .modal {
       position: absolute;
       top: 10%;
