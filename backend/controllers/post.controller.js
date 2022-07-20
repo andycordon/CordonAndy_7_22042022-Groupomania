@@ -1,13 +1,12 @@
 //POST.CONTROLLER
 
-const postModel = require("../models/post.model");
 const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
 const { uploadErrors } = require("../utils/errors.utils");
 const ObjectID = require("mongoose").Types.ObjectId;
-const fs = require("fs");
-const { promisify } = require("util");
-const pipeline = promisify(require("stream").pipeline);
+//const fs = require("fs");
+//const { promisify } = require("util");
+//const pipeline = promisify(require("stream").pipeline);
 
 //Recuperation de tous les Posts
 module.exports.readPost = (_req, res) => {
@@ -23,38 +22,39 @@ module.exports.createPost = async (req, res) => {
 
   if (req.file !== null) {
     try {
-      if (
-        req.file.detectedMimeType != "image/jpg" &&
-        req.file.detectedMimeType != "image/png" &&
-        req.file.detectedMimeType != "image/jpeg"
-      )
-        //Type de fichier accéptés
-        throw Error("fichier invalide...");
-
-      if (req.file.size > 500000) throw Error("taille maximum..."); //Poids maximum des fichiers
+      // if (
+      //   req.file.detectedMimeType != "image/jpg" &&
+      //   req.file.detectedMimeType != "image/png" &&
+      //   req.file.detectedMimeType != "image/jpeg"
+      // )
+      //   //Type de fichier accéptés
+      //   throw Error("fichier invalide...");
+      // if (req.file.size > 500000) throw Error("taille maximum..."); //Poids maximum des fichiers
     } catch (err) {
+      console.log(err);
       const errors = uploadErrors(err);
       return res.status(201).json({ errors });
     }
     fileName = req.body.posterId + Date.now() + ".jpg"; //ajout de nommage date + extension pour le rendre unique
-
-    await pipeline(
-      req.file.stream,
-      fs.createWriteStream(
-        `${__dirname}/../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
-      )
-    );
+    console.log(fileName);
+    // await pipeline(
+    //   req.file.stream,
+    //   fs.createWriteStream(
+    //     `${__dirname}../../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
+    //   )
+    // );
   }
-
-  const newPost = new postModel({
+  console.log("hello avant new post");
+  const newPost = new PostModel({
     posterId: req.body.posterId,
     message: req.body.message,
-    picture: req.file !== null ? "./uploads/posts/" + fileName : "",
-    video: req.body.video,
+    // picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    // video: req.body.video,
     likers: [],
     comments: [],
   });
-
+  console.log("hello APRES new post");
+  console.log(newPost);
   try {
     const post = await newPost.save();
     return res.status(201).json(post);
