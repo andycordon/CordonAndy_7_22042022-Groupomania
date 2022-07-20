@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SignInForm from "./SignInForm";
+import { NavLink } from "react-router-dom";
 
 const SignUpForm = () => {
   const [formSubmit, setFormSubmit] = useState(false);
@@ -61,50 +62,59 @@ const SignUpForm = () => {
           <SignInForm />
           <span></span>
           <h4 className="success">
-            Enregistrement réussi, veuillez-vous connecter
+            Enregistrement réussi, veuillez-vous connecter !
           </h4>
         </>
       ) : (
         <form action="" onSubmit={handleRegister} id="sign-up-form">
-          <label htmlFor="pseudo">Pseudo</label>
+          <h1>Inscription</h1>
+          <label htmlFor="pseudo"></label>
           <br />
           <input
             type="text"
             name="pseudo"
             id="pseudo"
+            placeholder="Pseudo"
+            title="Veuillez entrer votre pseudo"
             onChange={(e) => setPseudo(e.target.value)}
             value={pseudo}
           />
           <div className="pseudo error"></div>
           <br />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email"></label>
           <br />
           <input
             type="text"
             name="email"
             id="email"
+            placeholder="E-mail"
+            title="Veuillez entrer votre adresse mail"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
           <div className="email error"></div>
           <br />
-          <label htmlFor="password">Mot de passe</label>
+          <label htmlFor="password"></label>
           <br />
           <input
             type="password"
             name="password"
             id="password"
+            placeholder="Mot de passe"
+            title="Veuillez entrer votre mot de passe"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
           <div className="password error"></div>
           <br />
-          <label htmlFor="password-conf">Confirmer mot de passe</label>
+          <label htmlFor="password-conf"></label>
           <br />
           <input
             type="password"
             name="password"
             id="password-conf"
+            placeholder="Confirmation mot de passe"
+            title="Veuillez confirmer votre mot de passe"
             onChange={(e) => setControlPassword(e.target.value)}
             value={controlPassword}
           />
@@ -113,13 +123,13 @@ const SignUpForm = () => {
           <input type="checkbox" id="terms" />
           <label htmlFor="terms">
             J'accepte les{" "}
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <NavLink to="/conditions" target="_blank">
               conditions générales
-            </a>
+            </NavLink>
           </label>
           <div className="terms error"></div>
           <br />
-          <input type="submit" value="INSCRIPTION" />
+          <input className="button" type="submit" value="CONFIRMER" />
         </form>
       )}
     </>

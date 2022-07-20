@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Login from "../../pages/Login";
+import ConditionsGenerales from "../../pages/ConditionsGenerales";
 
 const index = () => {
   return (
@@ -11,7 +12,8 @@ const index = () => {
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="*" element={<Home replace to="/" />} />
+        <Route path="/conditions" element={<ConditionsGenerales />} />
+        <Route path="*" element={<Login replace to="/" />} />
       </Routes>
     </BrowserRouter>
   );

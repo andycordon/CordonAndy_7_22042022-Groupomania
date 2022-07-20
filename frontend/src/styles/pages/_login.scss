@@ -1,0 +1,55 @@
+.log-container {
+    margin: 10px;
+    
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    form {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        }
+
+    h1{
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    input {
+        border-radius: 10px;
+        height: 35px;
+        margin: 10px 0;
+        text-align: left;
+        text-indent: 10px;
+        border: $white solid 1px;
+        
+        &:focus{
+            border: $primary solid 1px;
+            outline: none;
+        }
+    }
+    .button {
+        background: $primary;
+        color: $black;
+        margin:10px 0;
+        border-radius: 10px;
+        border: $secondary solid 1px;
+        height: 40px;
+        font-weight: 600;
+        box-shadow: $shadow;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    
+        &:hover{
+            outline: none;
+            border: $primary solid 1px;
+            background-color: $secondary;
+            box-shadow: none;
+        }
+    }
+}

@@ -17,7 +17,7 @@ const Log = (props) => {
   };
 
   return (
-    <div className="connection-form">
+    <div className="connection-a">
       <div className="form-container">
         {signUpModal && <SignUpForm />}
         {signInModal && <SignInForm />}
