@@ -17,13 +17,13 @@ const Logout = () => {
     })
       .then(() => removeCookie("jwt"))
       .catch((err) => console.log(err));
-    
+
     window.location = "/";
   };
 
   return (
     <li onClick={logout}>
-      <img src="./img/icons/logout.svg" alt="logout" />
+      <img src="./img/icons/door-open-solid.svg" alt="logout" />
     </li>
   );
 };
