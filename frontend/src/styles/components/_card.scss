@@ -236,9 +236,7 @@
         .pseudo {
           display: flex;
 
-          h3 {
-            font-family: $primary;
-          }
+
           span {
             transform: translate(6px, 4px);
             cursor: pointer;
