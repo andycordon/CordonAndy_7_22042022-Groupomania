@@ -60,7 +60,6 @@ const SignUpForm = () => {
       {formSubmit ? (
         <>
           <SignInForm />
-          <span></span>
           <h4 className="success">
             Enregistrement réussi, veuillez-vous connecter !
           </h4>
