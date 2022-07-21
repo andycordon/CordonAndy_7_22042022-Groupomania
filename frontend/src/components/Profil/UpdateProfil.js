@@ -19,35 +19,31 @@ const UpdateProfil = () => {
     <div className="profil-container">
       <h1>{userData.pseudo}</h1>
       <div className="update-container">
-        <div className="left-part">
-          <img src={userData.picture} alt="user-pic" />
-          <UploadImg />
-          <p>{error.maxSize}</p>
-          <p>{error.format}</p>
-        </div>
-        <div className="right-part">
-          <div className="bio-update">
-            <h3>Mes notes</h3>
-            {updateForm === false && (
-              <>
-                <p onClick={() => setUpdateForm(!updateForm)}>{userData.bio}</p>
-                <button onClick={() => setUpdateForm(!updateForm)}>
-                  Ajouter une note
-                </button>
-              </>
-            )}
-            {updateForm && (
-              <>
-                <textarea
-                  type="text"
-                  defaultValue={userData.bio}
-                  onChange={(e) => setBio(e.target.value)}
-                ></textarea>
-                <button onClick={handleUpdate}>Confirmer</button>
-              </>
-            )}
-          </div>
-        </div>
+        <img src={userData.picture} alt="user-pic" />
+        <UploadImg />
+        <p>{error.maxSize}</p>
+        <p>{error.format}</p>
+      </div>
+      <div className="bio-update">
+        <h3>Mes notes</h3>
+        {updateForm === false && (
+          <>
+            <p onClick={() => setUpdateForm(!updateForm)}>{userData.bio}</p>
+            <button onClick={() => setUpdateForm(!updateForm)}>
+              Ajouter une note
+            </button>
+          </>
+        )}
+        {updateForm && (
+          <>
+            <textarea
+              type="text"
+              defaultValue={userData.bio}
+              onChange={(e) => setBio(e.target.value)}
+            ></textarea>
+            <button onClick={handleUpdate}>Confirmer</button>
+          </>
+        )}
       </div>
     </div>
   );

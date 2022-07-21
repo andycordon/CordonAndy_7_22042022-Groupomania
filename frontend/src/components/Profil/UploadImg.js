@@ -27,8 +27,7 @@ const UploadImg = () => {
         accept=".jpg, .jpeg, .png"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <br />
-      <input type="submit" value="Confirmer" />
+      <input className=".button" type="submit" value="Confirmer" />
     </form>
   );
 };

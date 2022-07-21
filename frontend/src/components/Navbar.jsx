@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className="logo">
               <img
                 src="./img/icon.png"
-                alt="icon pour aller à la page d'accueil"
+                alt="icon groupomania pour aller à la page d'accueil"
               />
               <h1>Groupomania</h1>
             </div>
