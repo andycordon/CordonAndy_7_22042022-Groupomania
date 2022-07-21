@@ -1,5 +1,6 @@
 $primary: #FD2D01;
 $secondary: #FFD7D7;
+$tertiary: #4E5166;
 $black: #000;
 $white: #fff;
 $background: #1c1c1c;
@@ -12,14 +13,21 @@ $shadow: 1px 1px 3px $secondary;
   list-style-type: none;
   outline: none;
   border: none;
+  font-family: lato;
+}
+
+body {
   background-color: $background;
   color: $white;
-  font-family: arial;
+
   
 }
+
+
 a,
 a:visited {
   color: $secondary;
+  text-decoration: none;
 
   &:hover {
     color: #FD2D01;
