@@ -4,12 +4,14 @@ import Home from "../../pages/Home";
 import Profil from "../../pages/Profil";
 import Login from "../../pages/Login";
 import ConditionsGenerales from "../../pages/ConditionsGenerales";
+import Register from "../../pages/Register";
 
 const index = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/conditions" element={<ConditionsGenerales />} />

@@ -20,6 +20,10 @@ $shadow: 1px 1px 3px $secondary;
 a,
 a:visited {
   color: $secondary;
+
+  &:hover {
+    color: #FD2D01;
+  }
 }
 
 .error {

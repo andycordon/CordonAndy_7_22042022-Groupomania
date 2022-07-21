@@ -68,7 +68,6 @@ const SignUpForm = () => {
         <form action="" onSubmit={handleRegister} id="sign-up-form">
           <h1>Inscription</h1>
           <label htmlFor="pseudo"></label>
-          <br />
           <input
             type="text"
             name="pseudo"
@@ -79,9 +78,7 @@ const SignUpForm = () => {
             value={pseudo}
           />
           <div className="pseudo error"></div>
-          <br />
           <label htmlFor="email"></label>
-          <br />
           <input
             type="text"
             name="email"
@@ -92,9 +89,7 @@ const SignUpForm = () => {
             value={email}
           />
           <div className="email error"></div>
-          <br />
           <label htmlFor="password"></label>
-          <br />
           <input
             type="password"
             name="password"
@@ -105,9 +100,7 @@ const SignUpForm = () => {
             value={password}
           />
           <div className="password error"></div>
-          <br />
           <label htmlFor="password-conf"></label>
-          <br />
           <input
             type="password"
             name="password"
@@ -118,16 +111,15 @@ const SignUpForm = () => {
             value={controlPassword}
           />
           <div className="password-confirm error"></div>
-          <br />
-          <input type="checkbox" id="terms" />
-          <label htmlFor="terms">
-            J'accepte les{" "}
-            <NavLink to="/conditions" target="_blank">
-              conditions générales
-            </NavLink>
-          </label>
+          <div className="conditions">
+            <input type="checkbox" id="terms" />
+            <label htmlFor="terms">
+              <NavLink to="/conditions" target="_blank">
+                J'accepte les conditions générales
+              </NavLink>
+            </label>
+          </div>
           <div className="terms error"></div>
-          <br />
           <input className="button" type="submit" value="CONFIRMER" />
         </form>
       )}

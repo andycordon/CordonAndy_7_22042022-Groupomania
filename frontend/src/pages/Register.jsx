@@ -1,7 +1,5 @@
 import React from "react";
-import Log from "../components/Log/Log.jsx";
-import "../styles/index.scss";
-
+import Regist from "../components/Log/Regist";
 export default function Login() {
   return (
     <div className="login-page">
@@ -13,7 +11,7 @@ export default function Login() {
             alt="Logo de l'entreprise avec son nom Groupomania"
           />
         </div>
-        <Log />
+        <Regist />
       </div>
     </div>
   );

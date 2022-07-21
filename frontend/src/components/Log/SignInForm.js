@@ -37,7 +37,6 @@ const SignInForm = () => {
     <form action="" onSubmit={handleLogin} id="sign-up-form">
       <h1>Bienvenue</h1>
       <label htmlFor="email"></label>
-      <br />
       <input
         type="text"
         name="email"
@@ -48,9 +47,7 @@ const SignInForm = () => {
         value={email}
       />
       <div className="email error"></div>
-      <br />
       <label htmlFor="password"></label>
-      <br />
       <input
         type="password"
         name="password"
@@ -61,7 +58,6 @@ const SignInForm = () => {
         value={password}
       />
       <div className="password error"></div>
-      <br />
       <input className="button" type="submit" value="CONNEXION" />
     </form>
   );

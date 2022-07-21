@@ -2,6 +2,7 @@
     margin: 10px;
     
 
+
     img {
         width: 100%;
         border-radius: 10px;
@@ -50,6 +51,23 @@
             border: $primary solid 1px;
             background-color: $secondary;
             box-shadow: none;
+        }
+    }
+    a {
+        color: #FFD7D7;
+        display: block;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .conditions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width:18px;
+            padding: 10px;
         }
     }
 }
