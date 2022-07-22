@@ -7,24 +7,57 @@
     }
     .update-container {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
 
         img {
-            width: 20%;
+            width: 100%;
             border-radius: 10px;
         }
 
         .upload-pic {
+            border-radius: 10px;
+            background-color: $secondary;
+            color: $black;
+            width: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+
             label {
-                background-color: green;
+                margin: 10px;
+                font-size: 25px;
             }
             [type="file"] {
-                background-color: blue;
+                text-align: center;
             }
 
             [type="submit"] {
-                background-color: yellow;
-            }
+                    background: $primary;
+                    color: $black;
+                    margin:10px;
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: $secondary solid 1px;
+                    height: 40px;
+                    font-weight: 600;
+                    box-shadow: $shadow;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                
+                    &:hover{
+                        outline: none;
+                        border: $primary solid 1px;
+                        background-color: $secondary;
+                        box-shadow: none;
+                    }
+                }
+            
         }
     }
-    
 }
