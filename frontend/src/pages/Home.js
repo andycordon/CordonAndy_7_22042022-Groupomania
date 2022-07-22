@@ -7,17 +7,20 @@ import Thread from "../components/Thread";
 const Home = () => {
   const userData = useSelector((state) => state.userReducer);
   return (
-    <div className="home">
-      <Navbar />
-      <h1>Bonjour {userData.pseudo} !</h1>
-      <div className="main">
-        <div className="home-header">
-          <NewPostForm />
-        </div>
-        <Thread />
+    <div>
+      <div>
+        <Navbar />
       </div>
-      <div className="right-side">
-        <div className="right-side-container"></div>
+      <div className="home-container">
+        <div className="user-container">
+          <h2>Bonjour {userData.pseudo} !</h2>
+          <img
+            src={userData.picture}
+            alt="Img de profil de l'utilisateur de groupomania"
+          />
+        </div>
+        <NewPostForm />
+        <Thread />
       </div>
     </div>
   );

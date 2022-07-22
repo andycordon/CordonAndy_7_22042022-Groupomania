@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty, timestampParser } from "../Utils";
-import { NavLink } from "react-router-dom";
 import { addPost, getPosts } from "../../actions/post.actions";
 
 const NewPostForm = () => {
@@ -66,15 +65,15 @@ const NewPostForm = () => {
 
   return (
     <div className="post-container">
-      {isLoading ? (
-        <i className="fas fa-spinner fa-pulse"></i>
-      ) : (
+      {
         <>
-          <NavLink to="/profil">
-            <div className="user-info">
-              <img src={userData.picture} alt="user-img" />
-            </div>
-          </NavLink>
+          <div className="user-pic">
+            <img
+              src={userData.picture}
+              alt="Img de profil de l'utilisateur de groupomania"
+            />
+          </div>
+
           <div className="post-form">
             <textarea
               name="message"
@@ -144,7 +143,7 @@ const NewPostForm = () => {
             </div>
           </div>
         </>
-      )}
+      }
     </div>
   );
 };

@@ -8,7 +8,7 @@ const UpdateProfil = () => {
 
   return (
     <div className="profil-container">
-      <h1>{userData.pseudo}</h1>
+      <h2>{userData.pseudo}</h2>
       <div className="update-container">
         <img src={userData.picture} alt="user-pic" />
         <UploadImg />
