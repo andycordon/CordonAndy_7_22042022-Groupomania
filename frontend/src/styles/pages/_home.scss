@@ -1,5 +1,5 @@
 .home-container {
-    //background-color: red;
+
 
     .user-container{
         
@@ -16,97 +16,6 @@
             width:30%;
             margin: 10px;
             border-radius: 10px;
-        }
-    }
-    .post-container {
-        margin-bottom: 10px;
-       
-        .post-form {
-            text-align: center;
-            border-radius: 10px;
-
-            textarea{
-                width: 100%;
-                height: 60px;
-                text-align: center;
-                padding: 18px;
-                background-color: $secondary;
-                border-radius: 10px 10px 0px 0px;
-                margin: 0 0 5px 0;
-            }
-        }
-        .post-img-button {
-            background-color: $secondary;
-            border-radius: 0 0 10px 10px;
-            color: $black;
-
-            .img-container-input {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                p {
-                    padding: 10px;
-                }
-
-                input {
-                    margin-bottom: 10px;
-
-                }
-            }
-        }
-        .btn-send {
-          
-            display: flex;
-            justify-content: center;
-
-            .cancel {
-                background: $secondary;
-                color: $black;
-                margin:10px 10px;
-                border-radius: 10px;
-                border: $primary solid 1px;
-                width: 30%;
-                height: 40px;
-                font-weight: 600;
-                box-shadow: $shadow;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-            
-                &:hover{
-                    outline: none;
-                    border: $secondary solid 1px;
-                    background-color: $primary;
-                    box-shadow: none;
-                }
-            }
-
-
-            .button {
-                background: $primary;
-                color: $black;
-                margin:10px 10px;
-                border-radius: 10px;
-                border: $secondary solid 1px;
-                width: 30%;
-                height: 40px;
-                font-weight: 600;
-                box-shadow: $shadow;
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-            
-                &:hover{
-                    outline: none;
-                    border: $primary solid 1px;
-                    background-color: $secondary;
-                    box-shadow: none;
-                }
-            }
         }
     }
 }
