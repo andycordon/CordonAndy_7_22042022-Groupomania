@@ -1,7 +1,6 @@
 .card-container {
     color: $black;
-    border-radius: 10px;
-    margin: 10px 0;
+    margin: 20px 0;
     
     
 
@@ -20,13 +19,20 @@
 
         .card-content {
             margin: 10px;
-            width: 80%;
+            width: 85%;
         }
     }
 
-    
-    .icon-container {
+    p {
+        color: $black;
         background-color: $white;
+        margin: 5px 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .icon-container {
+        background-color: $secondary;
         display: flex;
         justify-content:space-around;
         border-radius: 0 0 10px 10px;
@@ -68,20 +74,21 @@
             
         }
     }
+
     .update-post {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: $secondary;
+        background-color: $white;
         margin: 5px 0;
-
+    
         textarea{
             width: 100%;
-            height: 60px;
             text-align: center;
             padding: 18px;
-            background-color: $secondary;
+            background-color: $white;
+            
         }
 
         .button {
@@ -105,6 +112,18 @@
                  background-color: $secondary;
                  box-shadow: none;
             }
-            }
         }
+    }
+    .comments-container {
+        background-color: $secondary;
+        margin-top: -10px;
+        padding-top: 10px;
+        border-radius: 0 0 10px 10px;
+
+        img {
+            width: 15%;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    }
 }

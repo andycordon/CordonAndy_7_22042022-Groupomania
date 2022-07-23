@@ -91,8 +91,8 @@ const Card = ({ post }) => {
               </div>
               <LikeButton post={post} />
             </div>
-            {showComments && <CardComments post={post} />}
           </div>
+          {showComments && <CardComments post={post} />}
         </>
       }
     </li>

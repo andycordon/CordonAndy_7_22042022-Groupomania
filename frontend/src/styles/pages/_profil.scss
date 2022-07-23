@@ -13,15 +13,15 @@
 
         img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
         }
 
         .upload-pic {
-            border-radius: 10px;
+            border-radius: 0 0 10px 10px;
             background-color: $secondary;
             color: $black;
             width: 100%;
-            margin: 10px;
+            margin: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
