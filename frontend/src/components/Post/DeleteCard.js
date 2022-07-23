@@ -10,12 +10,12 @@ const DeleteCard = (props) => {
   return (
     <div
       onClick={() => {
-        if (window.confirm("Voulez-vous supprimer cet article ?")) {
+        if (window.confirm("Êtes-vous sur de vouloir supprimer ce poste ?")) {
           deleteQuote();
         }
       }}
     >
-      <img src="./img/icons/trash.svg" alt="trash" />
+      <img src="./img/icons/eraser-solid.svg" alt="trash" />
     </div>
   );
 };
