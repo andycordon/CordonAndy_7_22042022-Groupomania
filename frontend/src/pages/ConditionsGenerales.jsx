@@ -4,7 +4,7 @@ export default function ConditionsGénérales() {
   return (
     <div>
       <section>
-        <h1>Conditions générales d'utilisation</h1>
+        <h1>CONDITIONS GENERALES D'UTILISATION</h1>
         <article>
           <h2>Partie 1</h2>
           <h3>Article 1</h3>
