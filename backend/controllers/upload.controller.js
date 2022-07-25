@@ -27,9 +27,7 @@ module.exports.uploadProfil = async (req, res) => {
 
   await pipeline(
     req.file.stream,
-    fs.createWriteStream(
-      `${__dirname}./frontend/public/uploads/profil/${fileName}`
-    )
+    fs.createWriteStream(`${__dirname}./uploads/profil/${fileName}`)
   );
 
   //modifier une image par une autre
