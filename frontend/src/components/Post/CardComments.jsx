@@ -32,7 +32,7 @@ const CardComments = ({ post }) => {
             }
             key={comment._id}
           >
-            <div className="left-part">
+            <div className="comment-supp">
               <img
                 src={
                   !isEmpty(usersData[0]) &&
@@ -43,17 +43,16 @@ const CardComments = ({ post }) => {
                     })
                     .join("")
                 }
-                alt="commenter-pic"
+                alt="img de la personne qui à commenter"
               />
-            </div>
-            <div className="right-part">
-              <div className="comment-header">
-                <div className="pseudo">
-                  <h3>{comment.commenterPseudo}</h3>
-                  {comment.commenterId !== userData._id}
-                </div>
-                <span>{timestampParser(comment.timestamp)}</span>
+
+              <div>
+                <h3>{comment.commenterPseudo}</h3>
+                {comment.commenterId !== userData._id}
+                <div>{timestampParser(comment.timestamp)}</div>
               </div>
+            </div>
+            <div className="ensemble">
               <p>{comment.text}</p>
               <EditDeleteComment comment={comment} postId={post._id} />
             </div>
@@ -67,10 +66,9 @@ const CardComments = ({ post }) => {
             name="text"
             onChange={(e) => setText(e.target.value)}
             value={text}
-            placeholder="Votre commentaire"
+            placeholder="Ajouter votre commentaire ici..."
           />
-          <br />
-          <input type="submit" value="Confirmer" />
+          <input className="button" type="submit" value="Confirmer" />
         </form>
       )}
     </div>

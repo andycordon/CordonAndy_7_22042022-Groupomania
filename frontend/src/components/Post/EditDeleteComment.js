@@ -35,22 +35,24 @@ const EditDeleteComment = ({ comment, postId }) => {
     <div className="edit-comment">
       {isAuthor && edit === false && (
         <span onClick={() => setEdit(!edit)}>
-          <img src="./img/icons/edit.svg" alt="edit-comment" />
+          <img
+            src="./img/icons/pen-to-square-solid.svg"
+            alt="icon pour modifier le commentaire du post"
+          />
         </span>
       )}
       {isAuthor && edit && (
-        <form action="" onSubmit={handleEdit} className="edit-comment-form">
+        <form action="" onSubmit={handleEdit}>
           <label htmlFor="text" onClick={() => setEdit(!edit)}>
             Editer
           </label>
-          <br />
+
           <input
             type="text"
             name="text"
             onChange={(e) => setText(e.target.value)}
             defaultValue={comment.text}
           />
-          <br />
           <div className="btn">
             <span
               onClick={() => {
