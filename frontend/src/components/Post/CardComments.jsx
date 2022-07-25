@@ -32,41 +32,44 @@ const CardComments = ({ post }) => {
             }
             key={comment._id}
           >
-            <div className="comment-supp">
-              <img
-                src={
-                  !isEmpty(usersData[0]) &&
-                  usersData
-                    .map((user) => {
-                      if (user._id === comment.commenterId) return user.picture;
-                      else return null;
-                    })
-                    .join("")
-                }
-                alt="img de la personne qui à commenter"
-              />
-
-              <div>
-                <h3>{comment.commenterPseudo}</h3>
-                {comment.commenterId !== userData._id}
-                <div>{timestampParser(comment.timestamp)}</div>
+            <div className="separ-comment">
+              <div className="comment-supp">
+                <img
+                  src={
+                    !isEmpty(usersData[0]) &&
+                    usersData
+                      .map((user) => {
+                        if (user._id === comment.commenterId)
+                          return user.picture;
+                        else return null;
+                      })
+                      .join("")
+                  }
+                  alt="img de la personne qui à commenter"
+                />
+                <div>
+                  <h3>{comment.commenterPseudo}</h3>
+                  {comment.commenterId !== userData._id}
+                  <div>{timestampParser(comment.timestamp)}</div>
+                </div>
               </div>
-            </div>
-            <div className="ensemble">
               <p>{comment.text}</p>
+
+              {/* zone pour aller dans la modification ou suppressiondu commentaire */}
               <EditDeleteComment comment={comment} postId={post._id} />
             </div>
           </div>
         );
       })}
       {userData._id && (
-        <form action="" onSubmit={handleComment} className="comment-form">
+        <form action="" onSubmit={handleComment} className="holla">
+          <h3>Ajouter votre commentaire...</h3>
           <input
             type="text"
             name="text"
             onChange={(e) => setText(e.target.value)}
             value={text}
-            placeholder="Ajouter votre commentaire ici..."
+            placeholder="...juste ici"
           />
           <input className="button" type="submit" value="Confirmer" />
         </form>

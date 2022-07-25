@@ -120,6 +120,11 @@
         margin-top: -10px;
         padding-top: 10px;
         border-radius: 0 0 10px 10px;
+        
+        .separ-comment {
+            margin: 20px 0;
+            border-bottom: 5px solid $background;
+        }
 
         .comment-supp{
             display: flex;
@@ -129,21 +134,30 @@
                 width: 15%;
                 margin: 10px;
                 border-radius: 10px;
-            }
-            
-
-
+            }    
         }
-        .ensemble{
-            background-color: blue;
-        }
+    
         .edit-comment{
-            text-align: center;
-            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 -5px 0;
 
             img{
                 width: 18px;
-            height: 18px;
+                height: 18px;
+                margin:5px 10px 10px 10px;
+            }
+
+            form {
+                background-color: $background;
+                color: $white;
+                width: 90%;
+                border-radius: 10px;
+                h3 {
+                    margin: 10px 0;
+                }
+
             }
         }
         form {
@@ -155,12 +169,20 @@
             background-color: $white;
             border-radius: 0 0 10px 10px;
             margin: 10px 0;
+            
+            h3 {
+                margin: -20px 0 0 0;
+                padding-top: 10px;
+                background-color: $white;
+                width: 100%;
+            }
 
             [type="text"]{
                 text-align: center;
                 width: 100%;
                 padding: 18px;
                 font-size: medium;
+                margin: 0 0 0 0;
             }
 
             [type="submit"] {

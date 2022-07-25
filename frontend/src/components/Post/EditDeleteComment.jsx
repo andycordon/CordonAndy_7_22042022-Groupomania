@@ -38,33 +38,28 @@ const EditDeleteComment = ({ comment, postId }) => {
           <img
             src="./img/icons/pen-to-square-solid.svg"
             alt="icon pour modifier le commentaire du post"
-          />
+          />{" "}
+          <span
+            onClick={() => {
+              if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
+                handleDelete();
+              }
+            }}
+          >
+            <img src="./img/icons/eraser-solid.svg" alt="delete" />
+          </span>
         </span>
       )}
       {isAuthor && edit && (
         <form action="" onSubmit={handleEdit}>
-          <label htmlFor="text" onClick={() => setEdit(!edit)}>
-            Editer
-          </label>
-
+          <h3>Modifier votre commentaire</h3>
           <input
             type="text"
             name="text"
             onChange={(e) => setText(e.target.value)}
             defaultValue={comment.text}
           />
-          <div className="btn">
-            <span
-              onClick={() => {
-                if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
-                  handleDelete();
-                }
-              }}
-            >
-              <img src="./img/icons/trash.svg" alt="delete" />
-            </span>
-            <input type="submit" value="Valider modification" />
-          </div>
+          <input type="submit" value="Modifier" />
         </form>
       )}
     </div>
