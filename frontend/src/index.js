@@ -7,7 +7,6 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import rootReducer from "./reducers";
 import { getUsers } from "./actions/users.actions";
-// dev tools
 
 import { getPosts } from "./actions/post.actions";
 
