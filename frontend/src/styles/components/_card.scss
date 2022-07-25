@@ -156,6 +156,7 @@
                 border-radius: 10px;
                 h3 {
                     margin: 10px 0;
+                    background-color: $background;
                 }
 
             }
@@ -168,7 +169,7 @@
             text-align: center;
             background-color: $white;
             border-radius: 0 0 10px 10px;
-            margin: 10px 0;
+            margin: 10px 0 20px 0;
             
             h3 {
                 margin: -20px 0 0 0;
@@ -188,7 +189,7 @@
             [type="submit"] {
             background: $primary;
             color: $black;
-            margin:5px 0px;
+            margin:10px 0px;
             border-radius: 10px;
             border: $secondary solid 1px;
             width: 20%;
