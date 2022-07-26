@@ -1,6 +1,10 @@
 .profil-container {
     
-
+    p{
+        color:$primary;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
     h2 {
         margin: 10px;
         text-align: center;
@@ -58,6 +62,66 @@
                     }
                 }
             
+        }
+    }
+}
+
+//TABLETTE STYLE
+@media (min-width:768px) {
+    .profil-container {
+ 
+        h2 {
+            margin: 10px 0 5px 0;
+            text-align: center;
+            background-color: $primary;
+            border-radius: 10px 10px 0 0;
+            padding: 10px;
+        }
+        .update-container {
+            flex-direction: row;
+    
+            img {
+                border-radius: 0px 0px 0 10px;
+                height: 250px;
+                width: 250px
+            }
+    
+            .upload-pic {
+                border-radius: 0 0px 10px 0px;
+                margin: 0 0 0 5px;
+                height: 250px;
+                padding: 50px 0;
+            }
+        }
+    }
+}
+
+//DESKTOP STYLE
+@media (min-width: 992px) {
+    .profil-container {
+ 
+        h2 {
+            margin: 10px 0 5px 0;
+            text-align: center;
+            background-color: $primary;
+            border-radius: 10px 10px 0 0;
+            padding: 10px;
+        }
+        .update-container {
+            flex-direction: row;
+    
+            img {
+                border-radius: 0px 0px 0 10px;
+                height: 400px;
+                width: 400px
+            }
+    
+            .upload-pic {
+                border-radius: 0 0px 10px 0px;
+                margin: 0 0 0 5px;
+                height: 400px;
+                padding: 120px 0;
+            }
         }
     }
 }

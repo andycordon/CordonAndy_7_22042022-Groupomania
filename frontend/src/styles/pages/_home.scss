@@ -6,6 +6,10 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        background-color: $primary;
+        color: $black;
+        margin: 10px 0 5px 0;
+        border-radius: 10px 10px 0 0;
     
         h2{
             margin-top: 10px;
@@ -19,3 +23,45 @@
     }
 }
 
+//TABLETTE STYLE
+@media (min-width:768px) {
+    .home-container {
+        display: flex;
+
+        
+        .user-container{
+            
+          
+            width: 300px;
+            margin: 20px 5px 0 0px;
+            border-radius: 10px 0 0 10px;
+            text-align: center;
+
+            h2{
+                margin: 0 0 10px 0;
+            }
+            img {
+                width:50%;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+//DESKTOP STYLE
+@media (min-width: 992px) {
+    .home-container {
+        .user-container{
+            
+            width: 300px;
+            margin: 20px 5px 0 0px;
+            border-radius: 10px 0 0 10px;
+            text-align: center;
+
+            img {
+                width:60%;
+
+            }
+        }
+    }
+}

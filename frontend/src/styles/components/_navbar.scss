@@ -1,5 +1,5 @@
 .nav-container {
-
+  
   .logo {
     display: flex;
     flex-direction: row;
@@ -8,15 +8,20 @@
     background-color: $white;
     border-radius: 10px 10px 0 0 ;
     margin: 0px 0px 5px 0px;
+    height: 100px;
+    padding-top: 5px;
     
     img {
-      width: 100%;
+
+      height: 100%;
       border-radius: 10px;
     }
     h1 {
+
       color: $primary;
       font-size:40px;
       margin: 0 10px;
+      font-weight: 900;
     }
   }
 
@@ -40,4 +45,47 @@
         }
       }
     }
+}
+
+//TABLETTE STYLE
+@media (min-width:768px) {
+
+    ul {
+
+      justify-content: center;
+
+        img {
+          margin: 0 100px;
+        }
+      }
+}
+
+//DESKTOP STYLE
+@media (min-width: 992px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      border-radius: 10px 0 0 10px;
+      margin: 0px 5px 0px 0px;
+      width: 100%;
+      height: 100px;
+      padding-bottom: 5px;
+
+    }
+  
+    ul {
+
+      border-radius: 0 10px 10px 0;
+      height: 100px;
+        img {
+          width: 30px;
+          height: 30px;
+          margin: 0 30px;
+  
+        }
+      }
+  }
 }

@@ -13,7 +13,7 @@
             background-color: $white;
             color: $black;
             border: $white solid 1px;
-            border-radius: 10px 10px 0px 0px;
+           
             margin: 0 0 5px 0;
         }
     }
@@ -87,6 +87,41 @@
                 border: $primary solid 1px;
                 background-color: $secondary;
                 box-shadow: none;
+            }
+        }
+    }
+}
+
+//TABLETTE STYLE
+@media (min-width:768px) {
+    .post-container {
+        margin:20px 0 0 0;
+        width: 100%;
+       
+        .post-form {
+            textarea{
+                border-radius: 0px 10px 0px 0px;
+            }
+        }
+        .post-img-button {
+            border-radius: 0 0 10px 0px;
+        }
+    }
+}
+
+//DESKTOP STYLE
+@media (min-width:992px) {
+    .post-container {
+        margin:20px 0 0 0;
+        width: 100%;
+       
+        .post-form {
+            height: 250px;
+
+            textarea{
+                height: 113px;
+                padding-top: 40px;
+            
             }
         }
     }

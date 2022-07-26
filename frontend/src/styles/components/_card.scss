@@ -2,7 +2,7 @@
     color: $black;
     margin: 20px 0;
     
-    
+
 
     .header-card {
         background-color: $primary;
@@ -21,16 +21,18 @@
         color: $black;
         background-color: $white;
         margin: 5px 0;
-        padding: 10px;
+        padding: 40px;
         text-align: center;
     }
 
     .icon-container {
         background-color: $secondary;
         display: flex;
+        align-items: center;
+   
+
         justify-content:space-around;
         border-radius: 0 0 10px 10px;
-        
         
         img {
             width: 18px;
@@ -42,7 +44,6 @@
 
         .button-user {
             display: flex;
-            align-items: center;
             margin: 0 20px 0 0 ;
                 
         }
@@ -118,11 +119,10 @@
     .comments-container {
         background-color: $secondary;
         margin-top: -10px;
-        padding-top: 10px;
         border-radius: 0 0 10px 10px;
         
         .separ-comment {
-            margin: 20px 0;
+            
             border-bottom: 5px solid $background;
         }
 
@@ -169,7 +169,7 @@
             text-align: center;
             background-color: $white;
             border-radius: 0 0 10px 10px;
-            margin: 10px 0 20px 0;
+            margin: 20px 0;
             
             h3 {
                 margin: -20px 0 0 0;
@@ -206,6 +206,187 @@
                     border: $primary solid 1px;
                     background-color: $secondary;
                     box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+//TABLETTE STYLE
+@media (min-width:768px) {
+    .card-container {
+
+        .header-card {
+            img{
+                width: 10%;
+            }
+        }
+    
+        .icon-container {
+            justify-content:center;
+            
+            img {
+                margin: 10px 60px;
+              }
+    
+    
+            .button-user {
+                margin: 0 0px 0 0 ;
+                    
+            }
+            .card-footer{
+
+                img {
+                    margin:10px
+                }
+    
+                .comment-icon{
+                    margin: 0 60px;
+                }
+                .like-container {
+                    margin: 0 60px;
+                }
+            }
+        }
+    
+        .update-post {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            margin: 5px 0;
+        
+            textarea{
+                width: 100%;
+                text-align: center;
+                padding: 18px;
+                background-color: $white;
+                
+            }
+    
+            .button {
+                background: $primary;
+                color: $black;
+                margin:5px 0px;
+                border-radius: 10px;
+                border: $secondary solid 1px;
+                width: 20%;
+                height: 30px;
+                font-weight: 600;
+                box-shadow: $shadow;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+    
+         &:hover{
+                     outline: none;
+                     border: $primary solid 1px;
+                     background-color: $secondary;
+                     box-shadow: none;
+                }
+            }
+        }
+    
+    
+    
+    
+    
+    
+    
+        .comments-container {
+            background-color: $secondary;
+            margin-top: -10px;
+            border-radius: 0 0 10px 10px;
+            
+            
+            .separ-comment {
+                
+                border-bottom: 5px solid $background;
+            }
+    
+            .comment-supp{
+                display: flex;
+                align-items: center;
+    
+                img {
+                    width: 15%;
+                    margin: 10px;
+                    border-radius: 10px;
+                }    
+            }
+        
+            .edit-comment{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 0 -5px 0;
+    
+                img{
+                    width: 18px;
+                    height: 18px;
+                    margin:5px 10px 10px 10px;
+                }
+    
+                form {
+                    background-color: $background;
+                    color: $white;
+                    width: 90%;
+                    border-radius: 10px;
+                    h3 {
+                        margin: 10px 0;
+                        background-color: $background;
+                    }
+    
+                }
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: $white;
+                border-radius: 0 0 10px 10px;
+                margin: 20px 0;
+                
+                h3 {
+                    margin: -20px 0 0 0;
+                    padding-top: 10px;
+                    background-color: $white;
+                    width: 100%;
+                }
+    
+                [type="text"]{
+                    text-align: center;
+                    width: 100%;
+                    padding: 18px;
+                    font-size: medium;
+                    margin: 0 0 0 0;
+                }
+    
+                [type="submit"] {
+                background: $primary;
+                color: $black;
+                margin:10px 0px;
+                border-radius: 10px;
+                border: $secondary solid 1px;
+                width: 20%;
+                height: 30px;
+                font-weight: 600;
+                box-shadow: $shadow;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+    
+                &:hover{
+                        outline: none;
+                        border: $primary solid 1px;
+                        background-color: $secondary;
+                        box-shadow: none;
+                    }
                 }
             }
         }

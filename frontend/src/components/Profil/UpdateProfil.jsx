@@ -12,9 +12,9 @@ const UpdateProfil = () => {
       <div className="update-container">
         <img src={userData.picture} alt="user-pic" />
         <UploadImg />
-        <p>{error.maxSize}</p>
-        <p>{error.format}</p>
       </div>
+      <p>{error.maxSize}</p>
+      <p>{error.format}</p>
     </div>
   );
 };

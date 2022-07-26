@@ -13,15 +13,15 @@ const Home = () => {
       </div>
       <div className="home-container">
         <div className="user-container">
-          <h2>Bonjour {userData.pseudo} !</h2>
+          <h2>Bonjour {userData.pseudo}</h2>
           <img
             src={userData.picture}
             alt="Img de profil de l'utilisateur de groupomania"
           />
         </div>
         <NewPostForm />
-        <Thread />
       </div>
+      <Thread />
     </div>
   );
 };
