@@ -13,7 +13,6 @@ Backend:
 -nodemon
 -dotenv
 -mongoose
--body-parser
 -validator
 -bcrypt
 -jsonwebtoken
