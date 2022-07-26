@@ -1,7 +1,6 @@
 //SERVER
 
 const express = require("express");
-const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
@@ -23,8 +22,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Parser
-app.use(bodyParser.json()); //lecture du body
-app.use(bodyParser.urlencoded({ extended: true })); //lecture URL
+app.use(express.json()); //lecture du body
+app.use(express.urlencoded({ extended: true })); //lecture URL
 app.use(cookieParser()); //lecture des cookies
 
 //Sécurisation de la connection avec jwt
