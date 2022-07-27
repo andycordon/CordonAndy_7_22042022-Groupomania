@@ -61,7 +61,7 @@ const Card = ({ post }) => {
                 onChange={(e) => setTextUpdate(e.target.value)}
               />
               <button className="button" onClick={updateItem}>
-                Valider
+                MODIFIER
               </button>
             </div>
           )}

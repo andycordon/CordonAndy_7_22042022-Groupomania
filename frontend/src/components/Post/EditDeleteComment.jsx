@@ -59,7 +59,7 @@ const EditDeleteComment = ({ comment, postId }) => {
             onChange={(e) => setText(e.target.value)}
             defaultValue={comment.text}
           />
-          <input type="submit" value="Modifier" />
+          <input type="submit" value="MODIFIER" />
         </form>
       )}
     </div>
