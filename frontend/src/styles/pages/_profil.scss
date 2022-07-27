@@ -8,10 +8,10 @@
     h2 {
         margin: 10px 0 5px 0;
         text-align: center;
-        background-color: $primary;
+        background-color: $background;
+        border-top: 1px solid $white;
         border-radius: 10px 10px 0 0;
         padding: 10px;
-        color: $black;
     }
     .update-container {
         display: flex;
@@ -97,15 +97,8 @@
 @media (min-width: 992px) {
     .profil-container {
  
-        h2 {
-            margin: 10px 0 5px 0;
-            text-align: center;
-            background-color: $primary;
-            border-radius: 10px 10px 0 0;
-            padding: 10px;
-        }
         .update-container {
-            flex-direction: row;
+
     
             img {
                 border-radius: 0px 0px 0 10px;

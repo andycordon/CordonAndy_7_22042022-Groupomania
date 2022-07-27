@@ -24,8 +24,8 @@
         text-align: left;
         text-indent: 10px;
         border: $white solid 1px;
-        background-color: $white;
-        color: $black;
+        background-color: $background;
+        color: $white;
         
         &:focus{
             border: $primary solid 1px;
