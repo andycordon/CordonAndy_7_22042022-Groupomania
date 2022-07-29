@@ -9,6 +9,7 @@ require("./config/dataBase");
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 
 //gestion des cors
 const corsOptions = {
@@ -25,6 +26,9 @@ app.use(cors(corsOptions));
 app.use(express.json()); //lecture du body
 app.use(express.urlencoded({ extended: true })); //lecture URL
 app.use(cookieParser()); //lecture des cookies
+
+//Pour l'envoie des images
+app.use("/img", express.static(path.join(__dirname, "img")));
 
 //Sécurisation de la connection avec jwt
 app.get("*", checkUser);

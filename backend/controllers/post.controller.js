@@ -4,9 +4,9 @@ const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
 const { uploadErrors } = require("../utils/errors.utils");
 const ObjectID = require("mongoose").Types.ObjectId;
-//const fs = require("fs");
-//const { promisify } = require("util");
-//const pipeline = promisify(require("stream").pipeline);
+const fs = require("fs");
+// const { promisify } = require("util");
+// const pipeline = promisify(require("stream").pipeline);
 
 //Recuperation de tous les Posts
 module.exports.readPost = (_req, res) => {
@@ -35,20 +35,22 @@ module.exports.createPost = async (req, res) => {
       const errors = uploadErrors(err);
       return res.status(201).json({ errors });
     }
-    fileName = req.body.posterId + Date.now() + ".jpg"; //ajout de nommage date + extension pour le rendre unique
-    console.log(fileName);
+    //fileName = req.body.posterId + Date.now() + ".jpg"; //ajout de nommage date + extension pour le rendre unique
+    // console.log(fileName);
     // await pipeline(
     //   req.file.stream,
     //   fs.createWriteStream(
-    //     `${__dirname}../../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
+    //     `${__dirname}/../../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
     //   )
     // );
   }
+  console.log(req.file);
   console.log("hello avant new post");
   const newPost = new PostModel({
     posterId: req.body.posterId,
     message: req.body.message,
     // picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    picture: `${req.protocol}://${req.get("host")}/img/${req.file.filename}`,
     likers: [],
     comments: [],
   });

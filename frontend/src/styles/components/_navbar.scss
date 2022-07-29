@@ -11,6 +11,7 @@
     height: 100px;
     padding-top: 5px;
     
+    
     img {
 
       height: 100%;
@@ -39,9 +40,7 @@
         cursor:pointer;
 
         &:hover{
-          background-color: $primary;
-          padding: 5px;
-          border-radius: 5px;
+          scale: 1.2;
         }
       }
     }

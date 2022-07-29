@@ -1,8 +1,6 @@
 .card-container {
     color: $black;
-    margin: 20px 0;
-    
-
+    margin: 40px 0;
 
     .header-card {
         background-color: $background;
@@ -21,10 +19,18 @@
 
     p {
         color: $black;
-        background-color: $white;
-        margin: 5px 0;
-        padding: 40px;
+        margin: 0px 0;
         text-align: center;
+        padding: 0 40px;
+    }
+    .background-img {
+        background-color: $white;
+    }
+    .card-pic {
+        display: flex;
+        text-align: center;
+        margin: 0px auto;
+        max-width: 100%;
     }
 
     .icon-container {
@@ -225,7 +231,13 @@
                 width: 10%;
             }
         }
-    
+        .card-pic {
+            display: flex;
+            text-align: center;
+            margin: 0 auto 5px auto;
+            max-height: 300px;
+            
+        }
         .icon-container {
             justify-content:center;
             

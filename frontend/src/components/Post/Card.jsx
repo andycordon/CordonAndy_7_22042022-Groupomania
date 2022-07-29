@@ -53,21 +53,24 @@ const Card = ({ post }) => {
               {dateParser(post.createdAt)}
             </div>
           </div>
-          {isUpdated === false && <p>{post.message}</p>}
-          {isUpdated && (
-            <div className="update-post">
-              <textarea
-                defaultValue={post.message}
-                onChange={(e) => setTextUpdate(e.target.value)}
-              />
-              <button className="button" onClick={updateItem}>
-                MODIFIER
-              </button>
-            </div>
-          )}
-          {post.picture && (
-            <img src={post.picture} alt="card-pic" className="card-pic" />
-          )}
+          <div className="background-img">
+            {isUpdated === false && <p>{post.message}</p>}
+            {isUpdated && (
+              <div className="update-post">
+                <textarea
+                  defaultValue={post.message}
+                  onChange={(e) => setTextUpdate(e.target.value)}
+                />
+                <button className="button" onClick={updateItem}>
+                  MODIFIER
+                </button>
+              </div>
+            )}
+
+            {post.picture && (
+              <img src={post.picture} alt="card-pic" className="card-pic" />
+            )}
+          </div>
           <div className="icon-container">
             {userData._id === post.posterId && (
               <div className="button-user">
