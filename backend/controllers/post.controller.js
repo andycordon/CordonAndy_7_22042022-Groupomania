@@ -2,11 +2,7 @@
 
 const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
-const { uploadErrors } = require("../utils/errors.utils");
 const ObjectID = require("mongoose").Types.ObjectId;
-const fs = require("fs");
-// const { promisify } = require("util");
-// const pipeline = promisify(require("stream").pipeline);
 
 //Recuperation de tous les Posts
 module.exports.readPost = (_req, res) => {
@@ -18,43 +14,41 @@ module.exports.readPost = (_req, res) => {
 
 //Création d'un Post depuis un User
 module.exports.createPost = async (req, res) => {
-  let fileName;
+  let newPost;
 
-  if (req.file !== null) {
-    try {
-      // if (
-      //   req.file.detectedMimeType != "image/jpg" &&
-      //   req.file.detectedMimeType != "image/png" &&
-      //   req.file.detectedMimeType != "image/jpeg"
-      // )
-      //   //Type de fichier accéptés
-      //   throw Error("fichier invalide...");
-      // if (req.file.size > 500000) throw Error("taille maximum..."); //Poids maximum des fichiers
-    } catch (err) {
-      console.log(err);
-      const errors = uploadErrors(err);
-      return res.status(201).json({ errors });
+  if (req.file !== undefined) {
+    //Création d'un post avec une image et un message
+    if (req.body.message !== null) {
+      newPost = new PostModel({
+        posterId: req.body.posterId,
+        message: req.body.message,
+        picture: `${req.protocol}://${req.get("host")}/img/${
+          req.file.filename
+        }`,
+        likers: [],
+        comments: [],
+      });
+      //Ou juste d'une image sans message
+    } else {
+      newPost = new PostModel({
+        posterId: req.body.posterId,
+        picture: `${req.protocol}://${req.get("host")}/img/${
+          req.file.filename
+        }`,
+        likers: [],
+        comments: [],
+      });
     }
-    //fileName = req.body.posterId + Date.now() + ".jpg"; //ajout de nommage date + extension pour le rendre unique
-    // console.log(fileName);
-    // await pipeline(
-    //   req.file.stream,
-    //   fs.createWriteStream(
-    //     `${__dirname}/../../frontend/public/uploads/posts/${fileName}` //les fichiers prennent ce chemin
-    //   )
-    // );
+    //Sinon creation d'un post en simple message
+  } else {
+    newPost = new PostModel({
+      posterId: req.body.posterId,
+      message: req.body.message,
+      likers: [],
+      comments: [],
+    });
   }
-  console.log(req.file);
-  console.log("hello avant new post");
-  const newPost = new PostModel({
-    posterId: req.body.posterId,
-    message: req.body.message,
-    // picture: req.file !== null ? "./uploads/posts/" + fileName : "",
-    picture: `${req.protocol}://${req.get("host")}/img/${req.file.filename}`,
-    likers: [],
-    comments: [],
-  });
-  console.log("hello APRES new post");
+
   console.log(newPost);
   try {
     const post = await newPost.save();

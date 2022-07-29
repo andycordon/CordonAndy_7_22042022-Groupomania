@@ -22,6 +22,7 @@ module.exports.signUp = async (req, res) => {
       pseudo,
       email,
       password,
+      admin: false,
     });
     res.status(201).json({ user: user._id });
   } catch (err) {
