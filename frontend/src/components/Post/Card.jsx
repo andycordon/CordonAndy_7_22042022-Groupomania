@@ -72,12 +72,23 @@ const Card = ({ post }) => {
             )}
           </div>
           <div className="icon-container">
-            {userData._id === post.posterId && (
+            {userData._id === post.posterId && userData.admin === false && (
               <div className="button-user">
                 <div onClick={() => setIsUpdated(!isUpdated)}>
                   <img
                     src="./img/icons/pen-to-square-solid.svg"
-                    alt="icon pour modifier le post"
+                    alt="modifier"
+                  />
+                </div>
+                <DeleteCard id={post._id} />
+              </div>
+            )}
+            {userData.admin === true && (
+              <div className="button-user">
+                <div onClick={() => setIsUpdated(!isUpdated)}>
+                  <img
+                    src="./img/icons/pen-to-square-solid.svg"
+                    alt="modifier"
                   />
                 </div>
                 <DeleteCard id={post._id} />
