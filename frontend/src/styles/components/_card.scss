@@ -125,6 +125,10 @@
         background-color: $secondary;
         margin-top: -10px;
         border-radius: 0 0 10px 10px;
+        p {
+            text-align: left;
+            padding-left: 10px;
+        }
         
         .separ-comment {
             
@@ -157,7 +161,7 @@
             }
 
             form {
-                background-color: $background;
+                background-color: $secondary;
                 color: $white;
                 width: 90%;
                 border-radius: 10px;
@@ -286,11 +290,7 @@
         }
     
         .comments-container {
-            p {
-                text-align: left;
-                padding-left:10px;
-             
-            }
+
             .edit-comment{
                 form {
                     width: 80%;

@@ -36,12 +36,36 @@ const EditDeleteComment = ({ comment, postId }) => {
     <div className="edit-comment">
       {isAuthor && edit === false && userData.admin === false && (
         <span onClick={() => setEdit(!edit)}>
-          <img src="./img/icons/pen-to-square-solid.svg" alt="modifier" />
+          <img
+            src="./img/icons/pen-to-square-solid.svg"
+            alt="icon pour modifier le commentaire du post"
+          />{" "}
+          <span
+            onClick={() => {
+              if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
+                handleDelete();
+              }
+            }}
+          >
+            <img src="./img/icons/eraser-solid.svg" alt="delete" />
+          </span>
         </span>
       )}
       {userData.admin === true && edit === false && (
         <span onClick={() => setEdit(!edit)}>
-          <img src="./img/icons/pen-to-square-solid.svg" alt="modifier" />
+          <img
+            src="./img/icons/pen-to-square-solid.svg"
+            alt="icon pour modifier le commentaire du post"
+          />{" "}
+          <span
+            onClick={() => {
+              if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
+                handleDelete();
+              }
+            }}
+          >
+            <img src="./img/icons/eraser-solid.svg" alt="delete" />
+          </span>
         </span>
       )}
       {isAuthor && edit && userData.admin === false && (
@@ -53,18 +77,6 @@ const EditDeleteComment = ({ comment, postId }) => {
             defaultValue={comment.text}
           />
           <div>
-            <div
-              className="trash-button"
-              onClick={() => {
-                if (
-                  window.confirm("Voulez-vous supprimer votre commentaire ?")
-                ) {
-                  handleDelete();
-                }
-              }}
-            >
-              <img src="./img/icons/eraser-solid.svg" alt="suppression" />
-            </div>
             <input className="modif-button" type="submit" value="MODIFIER" />
           </div>
         </form>
@@ -78,16 +90,6 @@ const EditDeleteComment = ({ comment, postId }) => {
             defaultValue={comment.text}
           />
           <div>
-            <div
-              className="trash-button"
-              onClick={() => {
-                if (window.confirm("Voulez-vous supprimer ce commentaire ?")) {
-                  handleDelete();
-                }
-              }}
-            >
-              <img src="./img/icons/eraser-solid.svg" alt="suppression" />
-            </div>
             <input className="modif-button" type="submit" value="MODIFIER" />
           </div>
         </form>
