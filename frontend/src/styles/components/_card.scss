@@ -260,6 +260,7 @@
             max-height: 300px;
             
         }
+
         .icon-container {
             justify-content:center;
             
@@ -285,6 +286,11 @@
         }
     
         .comments-container {
+            p {
+                text-align: left;
+                padding-left:10px;
+             
+            }
             .edit-comment{
                 form {
                     width: 80%;
