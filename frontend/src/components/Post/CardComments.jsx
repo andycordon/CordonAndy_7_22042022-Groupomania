@@ -71,7 +71,7 @@ const CardComments = ({ post }) => {
             value={text}
             placeholder="...juste ici"
           />
-          <input className="button" type="submit" value="Confirmer" />
+          <input className="button" type="submit" value="CONFIRMER" />
         </form>
       )}
     </div>
