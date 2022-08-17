@@ -65,8 +65,6 @@ const NewPostForm = () => {
                   </div>
                 }
               </div>
-              {!isEmpty(error.format) && <p>{error.format}</p>}
-              {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>}
               <div className="btn-send">
                 {message || postPicture ? (
                   <button className="cancel" onClick={cancelPost}>

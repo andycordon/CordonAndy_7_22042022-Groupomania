@@ -32,16 +32,3 @@ module.exports.signInErrors = (err) => {
 
   return errors;
 };
-
-//erreurs sur l'importation
-module.exports.uploadErrors = (err) => {
-  let errors = { format: "", maxSize: "" };
-
-  if (err.message.includes("fichier invalide..."))
-    errors.format = "Ce type de fichier n'est pas pris en charge...";
-
-  if (err.message.includes("taille maximum..."))
-    errors.maxSize = "La taille du fichier dépasse 500ko...";
-
-  return errors;
-};
