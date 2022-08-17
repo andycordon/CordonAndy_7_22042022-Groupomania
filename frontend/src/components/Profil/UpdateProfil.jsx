@@ -13,8 +13,6 @@ const UpdateProfil = () => {
         <img src={userData.picture} alt="user-pic" />
         <UploadImg />
       </div>
-      <p>{error.maxSize}</p>
-      <p>{error.format}</p>
     </div>
   );
 };
