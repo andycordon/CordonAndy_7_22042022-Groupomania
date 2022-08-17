@@ -33,6 +33,7 @@
 
             input {
                 margin-bottom: 10px;
+                cursor: pointer;
 
             }
         }
@@ -56,6 +57,7 @@
             justify-content: center;
             text-align: center;
             align-items: center;
+            cursor: pointer;
         
             &:hover{
                 outline: none;
