@@ -1,11 +1,11 @@
-$primary: #FD2D01;
-$secondary: #FFD7D7;
-$tertiary: #4E5166;
+$primary: #FD2D01; //orange
+$secondary: #FFD7D7; //rose
+$tertiary: #4E5166; //non utiliser
 $black: #000;
 $white: #fff;
 $background: #1c1c1c;
-$shadow: 1px 1px 3px $secondary;
-$shadowsecond: 2px 2px 5px $white;
+$shadow: 1px 1px 3px $secondary; //pour les buttons
+$shadowsecond: 2px 2px 5px $white; //pour les photos de profils
 
 * {
   margin: 0;
