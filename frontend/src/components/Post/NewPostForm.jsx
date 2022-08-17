@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { isEmpty } from "../Utils";
 import { addPost, getPosts } from "../../actions/post.actions";
 
 const NewPostForm = () => {
@@ -8,7 +7,6 @@ const NewPostForm = () => {
   const [postPicture, setPostPicture] = useState(null);
   const [file, setFile] = useState();
   const userData = useSelector((state) => state.userReducer);
-  const error = useSelector((state) => state.errorReducer.postError);
   const dispatch = useDispatch();
 
   const handlePost = async () => {
