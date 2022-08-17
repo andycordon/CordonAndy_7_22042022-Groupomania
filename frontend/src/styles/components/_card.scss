@@ -109,14 +109,15 @@
             justify-content: center;
             text-align: center;
             align-items: center;
-
-     &:hover{
-                 outline: none;
-                 border: $primary solid 1px;
-                 background-color: $secondary;
-                 box-shadow: none;
+            cursor: pointer;
+            
+            &:hover{
+                        outline: none;
+                        border: $primary solid 1px;
+                        background-color: $secondary;
+                        box-shadow: none;
+                    }
             }
-        }
     }
 
 
@@ -213,6 +214,7 @@
             justify-content: center;
             text-align: center;
             align-items: center;
+            cursor: pointer;
 
             &:hover{
                     outline: none;
@@ -243,6 +245,7 @@
             justify-content: center;
             text-align: center;
             align-items: center;
+            
             }
         }
     }
