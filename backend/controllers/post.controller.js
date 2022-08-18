@@ -1,5 +1,5 @@
 //POST.CONTROLLER
-
+// import alert from "alert";
 const PostModel = require("../models/post.model");
 const UserModel = require("../models/user.model");
 const ObjectID = require("mongoose").Types.ObjectId;
@@ -15,7 +15,11 @@ module.exports.readPost = (_req, res) => {
 //Création d'un Post depuis un User
 module.exports.createPost = async (req, res) => {
   let newPost;
-
+  // console.log(req.body.posterId);
+  // if (req.body.posterId === "undefined") {
+  //   console.log("coucou");
+  //   console.log(req.headers.host);
+  // } else {
   if (req.file !== undefined) {
     //Création d'un post avec une image et un message
     if (req.body.message !== null) {
@@ -56,6 +60,7 @@ module.exports.createPost = async (req, res) => {
   } catch (err) {
     return res.status(400).send(err);
   }
+  // }
 };
 
 //Modification d'un Post déjà poster

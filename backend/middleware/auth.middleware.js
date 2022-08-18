@@ -10,15 +10,20 @@ module.exports.checkUser = (req, res, next) => {
     jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
       if (err) {
         res.locals.user = null;
+        // console.log("erreur");
+        // res.send(401).end();
         next();
       } else {
         let user = await UserModel.findById(decodedToken.id);
+        // console.log("user");
         res.locals.user = user;
         next();
       }
     });
   } else {
     res.locals.user = null;
+    // console.log("token");
+    // res.send(401).end();
     next();
   }
 };

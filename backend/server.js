@@ -2,6 +2,7 @@
 
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/auth.routes");
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
 require("dotenv").config({ path: "./config/.env" });
@@ -33,10 +34,11 @@ app.use("/img", express.static(path.join(__dirname, "img")));
 //Sécurisation de la connection avec jwt
 app.get("*", checkUser);
 app.get("/jwtid", requireAuth, (req, res) => {
-  res.status(200).send(res.locals.user._id);
+  res.status(200).send(res.locals.user?._id);
 });
 
 //routes principales
+app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
 
