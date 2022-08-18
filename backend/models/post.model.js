@@ -1,3 +1,5 @@
+//POST.MODEL
+
 const mongoose = require("mongoose");
 
 //Schema pour Post
@@ -9,7 +11,7 @@ const PostSchema = new mongoose.Schema(
     },
     message: {
       type: String,
-      trim: true,
+      trim: true, //evite les espaces de texte vide
       maxlength: 5000,
     },
     picture: {
@@ -25,7 +27,7 @@ const PostSchema = new mongoose.Schema(
           commenterId: String,
           commenterPseudo: String,
           text: String,
-          timestamp: Number,
+          timestamp: Number, //indication de la temporalité des posts
         },
       ],
       required: true,

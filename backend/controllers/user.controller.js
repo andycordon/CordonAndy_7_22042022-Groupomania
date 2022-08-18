@@ -17,7 +17,7 @@ module.exports.userInfo = (req, res) => {
   UserModel.findById(req.params.id, (err, docs) => {
     if (!err) res.send(docs);
     else console.log("ID inconnu : " + err);
-  }).select("-password"); // récupération de User sauf password
+  }).select("-password -email"); // récupération de User sauf password et emails
 };
 
 //Mise à jour de User

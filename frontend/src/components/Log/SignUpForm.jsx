@@ -16,9 +16,7 @@ const SignUpForm = () => {
     const pseudoError = document.querySelector(".pseudo.error");
     const emailError = document.querySelector(".email.error");
     const passwordError = document.querySelector(".password.error");
-    const passwordConfirmError = document.querySelector(
-      ".password-confirm.error"
-    );
+    const passwordConfirmError = document.querySelector(".password.error");
     const termsError = document.querySelector(".terms.error");
 
     passwordConfirmError.innerHTML = "";

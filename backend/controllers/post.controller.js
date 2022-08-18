@@ -14,7 +14,7 @@ module.exports.readPost = (_req, res) => {
 //Création d'un Post depuis un User
 module.exports.createPost = async (req, res) => {
   let newPost;
-  // console.log(req.body.posterId);
+  console.log(req.body.posterId);
   // if (req.body.posterId === "undefined") {
   //   console.log("coucou");
   //   console.log(req.headers.host);
