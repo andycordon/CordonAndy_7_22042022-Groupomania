@@ -1,5 +1,6 @@
 Groupomania, le réseau social d'entreprise
 
+![image de groupomania](frontend/public/img/log.png?raw=true)
 ![Alt text](frontend/public/img/icon.png?raw=true "Title")
 
 Techno utilisées:
