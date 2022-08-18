@@ -1,3 +1,5 @@
+//USER.ACTIONS
+
 import axios from "axios";
 
 export const GET_USER = "GET_USER";

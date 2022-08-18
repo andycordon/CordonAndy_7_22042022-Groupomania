@@ -1,7 +1,10 @@
+//UPLOADIMG
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadPicture } from "../../actions/user.actions";
 
+//permet de mettre a jour sa photo de profil
 const UploadImg = () => {
   const [file, setFile] = useState();
   const dispatch = useDispatch();
@@ -24,7 +27,7 @@ const UploadImg = () => {
         type="file"
         id="file"
         name="file"
-        accept=".jpg, .jpeg, .png"
+        accept=".jpg, .jpeg, .png" //format d'image possible
         onChange={(e) => setFile(e.target.files[0])}
       />
       <input type="submit" value="CONFIRMER" />

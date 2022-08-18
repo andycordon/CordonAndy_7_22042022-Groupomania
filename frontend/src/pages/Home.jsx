@@ -1,3 +1,5 @@
+//HOME
+
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
@@ -9,19 +11,21 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Navbar />
+        <Navbar /> {/*Barre de menu*/}
       </div>
       <div className="home-container">
         <div className="user-container">
-          <h2>Bienvenue {userData.pseudo}</h2>
+          <h2>Bienvenue {userData.pseudo}</h2>{" "}
+          {/*récupération du pseudo de user*/}
           <img
             src={userData.picture}
             alt="Img de profil de l'utilisateur de groupomania"
-          />
+          />{" "}
+          {/*récupération de la photo de profil de user*/}
         </div>
-        <NewPostForm />
+        <NewPostForm /> {/*formulaire de création de post*/}
       </div>
-      <Thread />
+      <Thread /> {/*fil d'actualité*/}
     </div>
   );
 };

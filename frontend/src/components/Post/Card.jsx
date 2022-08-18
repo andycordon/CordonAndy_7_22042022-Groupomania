@@ -1,3 +1,5 @@
+//CARD
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { dateParser, isEmpty } from "../Utils";
@@ -103,10 +105,11 @@ const Card = ({ post }) => {
                 />
                 <div>{post.comments.length}</div>
               </div>
-              <LikeButton post={post} />
+              <LikeButton post={post} /> {/*Liker ou Dislike le post*/}
             </div>
           </div>
-          {showComments && <CardComments post={post} />}
+          {showComments && <CardComments post={post} />}{" "}
+          {/*Affichage des commentaires et des ajout de commentaires*/}
         </>
       }
     </li>

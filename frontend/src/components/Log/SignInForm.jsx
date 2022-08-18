@@ -1,3 +1,5 @@
+//SIGNINFORM
+
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -10,6 +12,7 @@ const SignInForm = () => {
     const emailError = document.querySelector(".email.error");
     const passwordError = document.querySelector(".password.error");
 
+    //verification de l'email et du mot de passe pour la connexion
     axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}api/auth/login`,
@@ -21,9 +24,11 @@ const SignInForm = () => {
     })
       .then((res) => {
         console.log(res);
+        //si il y a des erreur de saisies messages d'erreurs s'affichent
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
+          //sinon la connexion est ok et direction la page home
         } else {
           window.location = "/home";
         }

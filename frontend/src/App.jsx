@@ -1,3 +1,5 @@
+//APP
+
 import React, { useEffect, useState } from "react";
 import Routes from "./components/Routes";
 import { UidContext } from "./components/AppContext";
@@ -19,7 +21,7 @@ const App = () => {
 
   return (
     <UidContext.Provider value={uid}>
-      <Routes />
+      <Routes /> {/*donne un acces aux diverse routes*/}
     </UidContext.Provider>
   );
 };

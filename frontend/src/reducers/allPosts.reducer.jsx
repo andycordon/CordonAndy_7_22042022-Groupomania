@@ -1,3 +1,5 @@
+//ALLPOSTS.REDUCER
+
 import { GET_ALL_POSTS } from "../actions/post.actions";
 
 const initialState = {};

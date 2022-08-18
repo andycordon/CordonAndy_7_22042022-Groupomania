@@ -1,3 +1,5 @@
+//NAVBAR
+
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logout from "./Log/Logout";
@@ -18,6 +20,7 @@ const Navbar = () => {
           </NavLink>
         </div>
         <ul>
+          {/*pour aller a la page home*/}
           <li>
             <NavLink to="/home">
               <div>
@@ -28,6 +31,7 @@ const Navbar = () => {
               </div>
             </NavLink>
           </li>
+          {/*pour aller a la page profil*/}
           <li>
             <NavLink to="/profil">
               <img
@@ -36,7 +40,7 @@ const Navbar = () => {
               />
             </NavLink>
           </li>
-          <Logout />
+          <Logout /> {/*pour ce deconnecter*/}
         </ul>
       </div>
     </nav>

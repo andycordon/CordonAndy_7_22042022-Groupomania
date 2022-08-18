@@ -1,3 +1,7 @@
+//CONDITIONSGENERALES
+
+//Liste des condition générales fictives
+
 import React from "react";
 
 export default function ConditionsGénérales() {

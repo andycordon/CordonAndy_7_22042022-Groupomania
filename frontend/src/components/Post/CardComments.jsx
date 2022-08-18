@@ -1,3 +1,5 @@
+//CARDCOMMENTS
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment, getPosts } from "../../actions/post.actions";

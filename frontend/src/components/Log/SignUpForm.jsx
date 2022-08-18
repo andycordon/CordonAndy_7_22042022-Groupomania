@@ -1,3 +1,5 @@
+//SIGNUPFORM
+
 import React, { useState } from "react";
 import axios from "axios";
 import SignInForm from "./SignInForm";
@@ -10,6 +12,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [controlPassword, setControlPassword] = useState("");
 
+  //gestion des erreurs
   const handleRegister = async (e) => {
     e.preventDefault();
     const terms = document.getElementById("terms");
@@ -22,13 +25,18 @@ const SignUpForm = () => {
     passwordConfirmError.innerHTML = "";
     termsError.innerHTML = "";
 
+    //Pour s'enregister le mot de passe doit bien être confirmé et les conditions accépter
     if (password !== controlPassword || !terms.checked) {
+      //les mots de passe doivent etre identique pour être créer
       if (password !== controlPassword)
         passwordConfirmError.innerHTML =
           "Les mots de passe ne correspondent pas";
 
+      //empeche l'enregistrement si les conditions ne sont pas accepter
       if (!terms.checked)
         termsError.innerHTML = "Veuillez valider les conditions générales";
+
+      //Si tout est ok possibilité de s'enregistrer
     } else {
       await axios({
         method: "post",
@@ -41,10 +49,12 @@ const SignUpForm = () => {
       })
         .then((res) => {
           console.log(res);
+          //par contre si le pseudo, l'email et le mot de passe sont incorrect inscription impossible
           if (res.data.errors) {
             pseudoError.innerHTML = res.data.errors.pseudo;
             emailError.innerHTML = res.data.errors.email;
             passwordError.innerHTML = res.data.errors.password;
+            //sinon tout est ok
           } else {
             setFormSubmit(true);
           }
@@ -57,6 +67,7 @@ const SignUpForm = () => {
     <>
       {formSubmit ? (
         <>
+          {/*Lorsque l'inscription est confirmer la page de connexion s'affiche avec le message suivant*/}
           <SignInForm />
           <h4 className="success">
             Enregistrement réussi, veuillez-vous connecter !

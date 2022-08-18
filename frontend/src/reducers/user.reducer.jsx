@@ -1,3 +1,5 @@
+//USER.REDUCER
+
 import { GET_USER, UPLOAD_PICTURE } from "../actions/user.actions";
 
 const initialState = {};

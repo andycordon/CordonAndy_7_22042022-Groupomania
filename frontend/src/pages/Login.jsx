@@ -1,3 +1,5 @@
+//LOGIN
+
 import React from "react";
 import Log from "../components/Log/Log.jsx";
 import "../styles/index.scss";
@@ -13,7 +15,7 @@ export default function Login() {
             alt="Logo de l'entreprise avec son nom Groupomania"
           />
         </div>
-        <Log />
+        <Log /> {/*formulaire de connexion*/}
       </div>
     </div>
   );

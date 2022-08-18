@@ -1,5 +1,8 @@
+//REGISTER
+
 import React from "react";
 import Regist from "../components/Log/Regist";
+
 export default function Login() {
   return (
     <div className="login-page">
@@ -11,7 +14,7 @@ export default function Login() {
             alt="Logo de l'entreprise avec son nom Groupomania"
           />
         </div>
-        <Regist />
+        <Regist /> {/*formulaire d'inscription*/}
       </div>
     </div>
   );

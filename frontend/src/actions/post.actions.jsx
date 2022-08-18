@@ -1,6 +1,8 @@
+//POST.ACTIONS
+
 import axios from "axios";
 
-// posts
+//fonctionnalité des posts
 export const GET_POSTS = "GET_POSTS";
 export const GET_ALL_POSTS = "GET_ALL_POSTS";
 export const ADD_POST = "ADD_POST";
@@ -9,12 +11,12 @@ export const UNLIKE_POST = "UNLIKE_POST";
 export const UPDATE_POST = "UPDATE_POST";
 export const DELETE_POST = "DELETE_POST";
 
-// comments
+//les commentaires des post
 export const ADD_COMMENT = "ADD_COMMENT";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
 
-// errors
+//les erreurs des posts
 export const GET_POST_ERRORS = "GET_POST_ERRORS";
 
 export const getPosts = (num) => {

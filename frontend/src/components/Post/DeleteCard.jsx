@@ -1,3 +1,5 @@
+//DELETECARD
+
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deletePost } from "../../actions/post.actions";
@@ -11,6 +13,7 @@ const DeleteCard = (props) => {
     <div
       onClick={() => {
         if (window.confirm("Voulez-vous supprimer ce poste ?")) {
+          //affichage d'une alerte de confirmation de suppression de post
           deleteQuote();
         }
       }}
