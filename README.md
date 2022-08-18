@@ -1,5 +1,7 @@
 Groupomania, le réseau social d'entreprise
 
+![Alt text](frontend/public/img/icon.png?raw=true "Title")
+
 Techno utilisées:
 -Node JS
 -MongoDB
