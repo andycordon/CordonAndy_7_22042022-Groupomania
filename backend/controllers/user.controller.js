@@ -5,7 +5,7 @@ const ObjectID = require("mongoose").Types.ObjectId;
 
 //Récupération de tous les Users
 module.exports.getAllUsers = async (req, res) => {
-  const users = await UserModel.find().select("-password"); //récupération de tous les Users sauf les passwords
+  const users = await UserModel.find().select("-password -email"); //récupération de tous les Users sauf les passwords et emails
   res.status(200).json(users);
 };
 
