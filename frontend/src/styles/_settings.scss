@@ -2,10 +2,10 @@
 
 $primary: #FD2D01; //orange
 $secondary: #FFD7D7; //rose
-$tertiary: #4E5166; //non utiliser
+$tertiary: #4E5166; //non utiliser a cause de l'accessibilité
 $black: #000;
 $white: #fff;
-$background: #1c1c1c;
+$background: #1c1c1c;//pour accessibilité à la place de tertiary
 $shadow: 1px 1px 3px $secondary; //pour les buttons
 $shadowsecond: 2px 2px 5px $white; //pour les photos de profils
 
