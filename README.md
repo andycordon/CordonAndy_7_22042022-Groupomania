@@ -2,7 +2,7 @@ Groupomania, le réseau social d'entreprise
 
 ![image de groupomania](frontend/public/img/log.png?raw=true)
 
-<div style="width:60px ; height:60px">
+<div style="width:20px ; height:20px">
 ![image de groupomania](frontend/public/img/log.png?raw=true)
 <div>
 
