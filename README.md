@@ -1,7 +1,10 @@
 Groupomania, le réseau social d'entreprise
 
 ![image de groupomania](frontend/public/img/log.png?raw=true)
-![Alt text](frontend/public/img/icon.png?raw=true "Title")
+
+<div style="width:60px ; height:60px">
+![image de groupomania](frontend/public/img/log.png?raw=true)
+<div>
 
 Techno utilisées:
 -Node JS
