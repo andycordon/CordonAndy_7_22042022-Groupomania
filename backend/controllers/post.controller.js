@@ -15,10 +15,6 @@ module.exports.readPost = (_req, res) => {
 module.exports.createPost = async (req, res) => {
   let newPost;
   console.log(req.body.posterId);
-  // if (req.body.posterId === "undefined") {
-  //   console.log("coucou");
-  //   console.log(req.headers.host);
-  // } else {
   if (req.file !== undefined) {
     //Création d'un post avec une image et un message
     if (req.body.message !== null) {
@@ -59,7 +55,6 @@ module.exports.createPost = async (req, res) => {
   } catch (err) {
     return res.status(400).send(err);
   }
-  // }
 };
 
 //Modification d'un Post déjà poster
